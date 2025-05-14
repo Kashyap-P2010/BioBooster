@@ -1,342 +1,250 @@
-import { Workout, DailyChallenge } from '../models/Workout';
-import { DifficultyLevel, MuscleGroup, AgeGroup } from '../models/Exercise';
-import { FitnessGoal } from '../models/User';
-import { exercises } from './exercises';
-import { v4 as uuidv4 } from 'uuid';
+import { Workout } from '../types/workout';
 
-// Helper function to find exercise by name
-const findExerciseByName = (name: string) => {
-  return exercises.find(exercise => exercise.name === name);
-};
-
-// Create workouts using exercises from our database
-export const workouts: Workout[] = [
+export const presetWorkouts: Workout[] = [
   {
-    id: uuidv4(),
-    name: 'Full Body Beginner Blast',
-    description: 'A well-rounded workout for beginners targeting all major muscle groups.',
+    id: 'morning-energizer',
+    name: 'Morning Energizer',
+    description: 'Start your day with this invigorating full-body workout that will boost your energy levels.',
+    type: 'preset',
+    difficulty: 'beginner',
+    duration: 20,
+    targetMuscleGroups: ['full-body'],
+    imageUrl: 'https://images.pexels.com/photos/3822906/pexels-photo-3822906.jpeg?auto=compress&cs=tinysrgb&w=1200&h=500&fit=crop',
     exercises: [
       {
-        exerciseId: findExerciseByName('Bodyweight Squat')?.id || '',
+        exerciseId: 'jumping-jacks',
         sets: 3,
-        reps: 12,
-        completed: false
+        reps: 20,
+        durationInSeconds: 60,
+        restAfterInSeconds: 30
       },
       {
-        exerciseId: findExerciseByName('Push-Up')?.id || '',
+        exerciseId: 'arm-circles',
         sets: 2,
-        reps: 8,
-        completed: false
+        reps: 15,
+        durationInSeconds: 45,
+        restAfterInSeconds: 20
       },
       {
-        exerciseId: findExerciseByName('Plank')?.id || '',
-        sets: 2,
-        duration: 30,
-        reps: 0, // Not applicable for timed exercises
-        completed: false
-      },
-      {
-        exerciseId: findExerciseByName('Glute Bridge')?.id || '',
+        exerciseId: 'high-knees-slow',
         sets: 3,
-        reps: 12,
-        completed: false
-      }
-    ],
-    difficulty: DifficultyLevel.Beginner,
-    duration: 20, // 20 minutes
-    targetMuscleGroups: [
-      MuscleGroup.Legs, 
-      MuscleGroup.Chest, 
-      MuscleGroup.Core, 
-      MuscleGroup.Glutes
-    ],
-    targetAgeGroup: [AgeGroup.Teen, AgeGroup.Adult],
-    goals: [
-      FitnessGoal.BuildStrength, 
-      FitnessGoal.LoseWeight
-    ],
-    isFeatured: true,
-    createdAt: new Date(),
-    tags: ['beginner', 'full-body', 'quick']
-  },
-  {
-    id: uuidv4(),
-    name: 'Core Crusher',
-    description: 'Focus on strengthening your core with this intense abdominal workout.',
-    exercises: [
-      {
-        exerciseId: findExerciseByName('Plank')?.id || '',
-        sets: 3,
-        duration: 45,
-        reps: 0,
-        completed: false
+        reps: 20,
+        durationInSeconds: 45,
+        restAfterInSeconds: 30
       },
       {
-        exerciseId: findExerciseByName('Mountain Climbers')?.id || '',
-        sets: 3,
-        duration: 30,
-        reps: 0,
-        completed: false
-      },
-      {
-        exerciseId: findExerciseByName('Bird Dog')?.id || '',
-        sets: 3,
-        reps: 10,
-        completed: false
-      },
-      {
-        exerciseId: findExerciseByName('Glute Bridge')?.id || '',
+        exerciseId: 'squats',
         sets: 3,
         reps: 15,
-        completed: false
+        durationInSeconds: 60,
+        restAfterInSeconds: 45
       }
     ],
-    difficulty: DifficultyLevel.Intermediate,
-    duration: 25, // 25 minutes
-    targetMuscleGroups: [MuscleGroup.Core, MuscleGroup.Glutes],
-    targetAgeGroup: [AgeGroup.Teen, AgeGroup.Adult],
-    goals: [FitnessGoal.BuildStrength, FitnessGoal.LoseWeight],
-    isFeatured: false,
-    createdAt: new Date(),
-    tags: ['core', 'abs', 'intermediate']
+    createdAt: '2024-03-01T00:00:00.000Z'
   },
   {
-    id: uuidv4(),
-    name: 'Lower Body Burner',
-    description: 'Target your legs and glutes with this challenging lower body workout.',
+    id: 'core-crusher',
+    name: 'Core Crusher',
+    description: 'An intense core workout focusing on building strength and definition in your midsection.',
+    type: 'preset',
+    difficulty: 'intermediate',
+    duration: 30,
+    targetMuscleGroups: ['abs'],
+    imageUrl: 'https://images.pexels.com/photos/4162456/pexels-photo-4162456.jpeg?auto=compress&cs=tinysrgb&w=1200&h=500&fit=crop',
     exercises: [
       {
-        exerciseId: findExerciseByName('Bodyweight Squat')?.id || '',
+        exerciseId: 'plank',
+        sets: 3,
+        reps: 1,
+        durationInSeconds: 60,
+        restAfterInSeconds: 45
+      },
+      {
+        exerciseId: 'bicycle-crunches',
+        sets: 3,
+        reps: 20,
+        durationInSeconds: 45,
+        restAfterInSeconds: 30
+      },
+      {
+        exerciseId: 'russian-twists',
+        sets: 3,
+        reps: 20,
+        durationInSeconds: 45,
+        restAfterInSeconds: 30
+      },
+      {
+        exerciseId: 'hollow-body-hold',
+        sets: 3,
+        reps: 1,
+        durationInSeconds: 45,
+        restAfterInSeconds: 45
+      }
+    ],
+    createdAt: '2024-03-01T00:00:00.000Z'
+  },
+  {
+    id: 'power-push',
+    name: 'Power Push',
+    description: 'Challenge yourself with this advanced upper body workout focusing on push exercises.',
+    type: 'preset',
+    difficulty: 'advanced',
+    duration: 45,
+    targetMuscleGroups: ['chest', 'shoulders', 'arms'],
+    imageUrl: 'https://images.pexels.com/photos/3822906/pexels-photo-3822906.jpeg?auto=compress&cs=tinysrgb&w=1200&h=500&fit=crop',
+    exercises: [
+      {
+        exerciseId: 'diamond-pushups',
+        sets: 4,
+        reps: 12,
+        durationInSeconds: 60,
+        restAfterInSeconds: 45
+      },
+      {
+        exerciseId: 'pike-pushups',
+        sets: 3,
+        reps: 10,
+        durationInSeconds: 45,
+        restAfterInSeconds: 60
+      },
+      {
+        exerciseId: 'decline-pushups',
+        sets: 3,
+        reps: 15,
+        durationInSeconds: 60,
+        restAfterInSeconds: 45
+      },
+      {
+        exerciseId: 'plank-to-pushup',
+        sets: 3,
+        reps: 10,
+        durationInSeconds: 45,
+        restAfterInSeconds: 60
+      }
+    ],
+    createdAt: '2024-03-01T00:00:00.000Z'
+  },
+  {
+    id: 'leg-day-blast',
+    name: 'Leg Day Blast',
+    description: 'A challenging lower body workout to build strength and endurance in your legs.',
+    type: 'preset',
+    difficulty: 'intermediate',
+    duration: 35,
+    targetMuscleGroups: ['legs'],
+    imageUrl: 'https://images.pexels.com/photos/4162456/pexels-photo-4162456.jpeg?auto=compress&cs=tinysrgb&w=1200&h=500&fit=crop',
+    exercises: [
+      {
+        exerciseId: 'squats',
         sets: 4,
         reps: 15,
-        completed: false
+        durationInSeconds: 60,
+        restAfterInSeconds: 45
       },
       {
-        exerciseId: findExerciseByName('Lunges')?.id || '',
+        exerciseId: 'reverse-lunges',
         sets: 3,
         reps: 12,
-        completed: false
+        durationInSeconds: 45,
+        restAfterInSeconds: 30
       },
       {
-        exerciseId: findExerciseByName('Glute Bridge')?.id || '',
+        exerciseId: 'glute-bridges',
         sets: 3,
-        reps: 15,
-        completed: false
+        reps: 20,
+        durationInSeconds: 45,
+        restAfterInSeconds: 30
       },
       {
-        exerciseId: findExerciseByName('Wall Sit')?.id || '',
+        exerciseId: 'wall-sit',
         sets: 3,
-        duration: 45,
-        reps: 0,
-        completed: false
+        reps: 1,
+        durationInSeconds: 60,
+        restAfterInSeconds: 45
       }
     ],
-    difficulty: DifficultyLevel.Intermediate,
-    duration: 30, // 30 minutes
-    targetMuscleGroups: [MuscleGroup.Legs, MuscleGroup.Glutes],
-    targetAgeGroup: [AgeGroup.Teen, AgeGroup.Adult],
-    goals: [FitnessGoal.BuildStrength, FitnessGoal.Endurance],
-    isFeatured: true,
-    createdAt: new Date(),
-    tags: ['legs', 'glutes', 'strength']
+    createdAt: '2024-03-01T00:00:00.000Z'
   },
   {
-    id: uuidv4(),
+    id: 'senior-mobility',
     name: 'Senior Mobility & Strength',
-    description: 'A gentle workout designed for seniors to improve mobility, balance, and strength.',
+    description: 'A gentle but effective workout designed specifically for seniors to improve mobility and maintain strength.',
+    type: 'preset',
+    difficulty: 'beginner',
+    duration: 25,
+    targetMuscleGroups: ['full-body'],
+    imageUrl: 'https://images.pexels.com/photos/7991524/pexels-photo-7991524.jpeg?auto=compress&cs=tinysrgb&w=1200&h=500&fit=crop',
     exercises: [
       {
-        exerciseId: findExerciseByName('Seated Leg Lifts')?.id || '',
+        exerciseId: 'arm-circles',
         sets: 2,
         reps: 10,
-        completed: false
+        durationInSeconds: 30,
+        restAfterInSeconds: 45
       },
       {
-        exerciseId: findExerciseByName('Bird Dog')?.id || '',
+        exerciseId: 'wall-sit',
         sets: 2,
-        reps: 8,
-        completed: false
+        reps: 1,
+        durationInSeconds: 30,
+        restAfterInSeconds: 60
       },
       {
-        exerciseId: findExerciseByName('Glute Bridge')?.id || '',
+        exerciseId: 'standing-calf-raises',
         sets: 2,
-        reps: 10,
-        completed: false
+        reps: 12,
+        durationInSeconds: 30,
+        restAfterInSeconds: 45
       },
       {
-        exerciseId: findExerciseByName('Wall Sit')?.id || '',
+        exerciseId: 'marching-in-place',
         sets: 2,
-        duration: 20,
-        reps: 0,
-        completed: false
+        reps: 20,
+        durationInSeconds: 45,
+        restAfterInSeconds: 60
       }
     ],
-    difficulty: DifficultyLevel.Beginner,
-    duration: 20, // 20 minutes
-    targetMuscleGroups: [MuscleGroup.Legs, MuscleGroup.Core, MuscleGroup.Glutes],
-    targetAgeGroup: [AgeGroup.Senior],
-    goals: [FitnessGoal.IncreaseFlexibility, FitnessGoal.BuildStrength],
-    isFeatured: true,
-    createdAt: new Date(),
-    tags: ['senior', 'mobility', 'gentle']
+    createdAt: '2024-03-01T00:00:00.000Z'
   },
   {
-    id: uuidv4(),
-    name: 'Teen Energy Blast',
-    description: 'A high-energy workout for teens focusing on form, coordination, and burning energy.',
+    id: 'teen-fitness',
+    name: 'Teen Fitness Fundamentals',
+    description: 'A fun and engaging workout designed for teenagers to build strength and improve coordination.',
+    type: 'preset',
+    difficulty: 'beginner',
+    duration: 30,
+    targetMuscleGroups: ['full-body'],
+    imageUrl: 'https://images.pexels.com/photos/3822906/pexels-photo-3822906.jpeg?auto=compress&cs=tinysrgb&w=1200&h=500&fit=crop',
     exercises: [
       {
-        exerciseId: findExerciseByName('Push-Up')?.id || '',
+        exerciseId: 'jumping-jacks',
+        sets: 3,
+        reps: 20,
+        durationInSeconds: 45,
+        restAfterInSeconds: 30
+      },
+      {
+        exerciseId: 'knee-pushups',
         sets: 3,
         reps: 10,
-        completed: false
+        durationInSeconds: 45,
+        restAfterInSeconds: 45
       },
       {
-        exerciseId: findExerciseByName('Bodyweight Squat')?.id || '',
+        exerciseId: 'squats',
         sets: 3,
-        reps: 15,
-        completed: false
+        reps: 12,
+        durationInSeconds: 45,
+        restAfterInSeconds: 30
       },
       {
-        exerciseId: findExerciseByName('Mountain Climbers')?.id || '',
+        exerciseId: 'high-knees-slow',
         sets: 3,
-        duration: 30,
-        reps: 0,
-        completed: false
-      },
-      {
-        exerciseId: findExerciseByName('Plank')?.id || '',
-        sets: 3,
-        duration: 30,
-        reps: 0,
-        completed: false
+        reps: 20,
+        durationInSeconds: 45,
+        restAfterInSeconds: 45
       }
     ],
-    difficulty: DifficultyLevel.Beginner,
-    duration: 25, // 25 minutes
-    targetMuscleGroups: [MuscleGroup.FullBody, MuscleGroup.Cardio],
-    targetAgeGroup: [AgeGroup.Teen],
-    goals: [FitnessGoal.ImproveCardio, FitnessGoal.BuildStrength],
-    isFeatured: false,
-    createdAt: new Date(),
-    tags: ['teen', 'energy', 'cardio']
-  }
-];
-
-// Create daily challenges
-export const dailyChallenges: DailyChallenge[] = [
-  {
-    id: uuidv4(),
-    name: 'Full Body Blitz Challenge',
-    description: 'Push your limits with this full-body workout designed to boost strength and endurance.',
-    workout: {
-      id: uuidv4(),
-      name: 'Full Body Blitz',
-      description: 'A challenging full-body workout targeting all major muscle groups.',
-      exercises: [
-        {
-          exerciseId: findExerciseByName('Push-Up')?.id || '',
-          sets: 3,
-          reps: 15,
-          completed: false
-        },
-        {
-          exerciseId: findExerciseByName('Bodyweight Squat')?.id || '',
-          sets: 3,
-          reps: 20,
-          completed: false
-        },
-        {
-          exerciseId: findExerciseByName('Plank')?.id || '',
-          sets: 3,
-          duration: 45,
-          reps: 0,
-          completed: false
-        },
-        {
-          exerciseId: findExerciseByName('Lunges')?.id || '',
-          sets: 3,
-          reps: 12,
-          completed: false,
-          notes: 'Each leg'
-        },
-        {
-          exerciseId: findExerciseByName('Mountain Climbers')?.id || '',
-          sets: 3,
-          duration: 45,
-          reps: 0,
-          completed: false
-        }
-      ],
-      difficulty: DifficultyLevel.Intermediate,
-      duration: 35, // 35 minutes
-      targetMuscleGroups: [MuscleGroup.FullBody],
-      targetAgeGroup: [AgeGroup.Teen, AgeGroup.Adult],
-      goals: [FitnessGoal.BuildStrength, FitnessGoal.Endurance, FitnessGoal.LoseWeight],
-      isChallenge: true,
-      createdAt: new Date(),
-      tags: ['challenge', 'full-body', 'intermediate']
-    },
-    date: new Date(),
-    difficulty: DifficultyLevel.Intermediate,
-    participants: 234,
-    rewards: {
-      streakPoints: 50,
-      badges: ['Daily Challenger', 'Full Body Warrior']
-    }
-  },
-  {
-    id: uuidv4(),
-    name: '5-Minute Core Crusher',
-    description: 'A quick but intense core workout that you can do anytime, anywhere.',
-    workout: {
-      id: uuidv4(),
-      name: '5-Minute Core Crusher',
-      description: 'An intense core workout that takes just 5 minutes.',
-      exercises: [
-        {
-          exerciseId: findExerciseByName('Plank')?.id || '',
-          sets: 1,
-          duration: 60,
-          reps: 0,
-          completed: false
-        },
-        {
-          exerciseId: findExerciseByName('Mountain Climbers')?.id || '',
-          sets: 1,
-          duration: 60,
-          reps: 0,
-          completed: false
-        },
-        {
-          exerciseId: findExerciseByName('Bird Dog')?.id || '',
-          sets: 1,
-          reps: 20,
-          completed: false,
-          notes: '10 each side'
-        },
-        {
-          exerciseId: findExerciseByName('Glute Bridge')?.id || '',
-          sets: 1,
-          reps: 20,
-          completed: false
-        }
-      ],
-      difficulty: DifficultyLevel.Beginner,
-      duration: 5, // 5 minutes
-      targetMuscleGroups: [MuscleGroup.Core, MuscleGroup.Glutes],
-      targetAgeGroup: [AgeGroup.Teen, AgeGroup.Adult, AgeGroup.Senior],
-      goals: [FitnessGoal.BuildStrength],
-      isChallenge: true,
-      createdAt: new Date(),
-      tags: ['challenge', 'quick', 'core']
-    },
-    date: new Date(new Date().setDate(new Date().getDate() - 1)), // Yesterday's challenge
-    difficulty: DifficultyLevel.Beginner,
-    participants: 456,
-    rewards: {
-      streakPoints: 25,
-      badges: ['Core Crusher']
-    }
+    createdAt: '2024-03-01T00:00:00.000Z'
   }
 ];
