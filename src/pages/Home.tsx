@@ -1,256 +1,240 @@
-import { ArrowRight, Activity, Award, Clock, Filter } from 'lucide-react';
-import Layout from '../components/common/Layout';
-import Button from '../components/common/Button';
-import Card from '../components/common/Card';
-import { useTheme } from '../context/ThemeContext';
+import { motion } from 'framer-motion';
+import { ArrowRight, Dumbbell, FlameIcon, LineChart, Timer } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import Button from '../components/ui/Button';
+import Card from '../components/ui/Card';
+import { useUser } from '../contexts/UserContext';
 
-const Home = () => {
-  const { theme } = useTheme();
-  
-  const heroImageUrl = "https://images.pexels.com/photos/2294361/pexels-photo-2294361.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
-  
-  // Features data
-  const features = [
-    {
-      icon: <Activity className="h-6 w-6" />,
-      title: 'Personalized Workouts',
-      description: 'Get daily workouts tailored to your fitness level, goals, and available time.'
-    },
-    {
-      icon: <Award className="h-6 w-6" />,
-      title: 'Achievement System',
-      description: 'Stay motivated with badges, level-ups, and streaks as you progress in your fitness journey.'
-    },
-    {
-      icon: <Clock className="h-6 w-6" />,
-      title: 'Smart Timer',
-      description: 'Customize rest periods and work intervals to match your workout intensity needs.'
-    },
-    {
-      icon: <Filter className="h-6 w-6" />,
-      title: 'Targeted Routines',
-      description: 'Choose workouts that focus on specific muscle groups or go for a full-body experience.'
+export default function Home() {
+  const { user } = useUser();
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1
+      }
     }
-  ];
+  };
   
-  // Program cards data
-  const programs = [
-    {
-      title: "Beginner's Path",
-      description: "Perfect for those just starting their fitness journey. Build a foundation with gentle, effective workouts.",
-      imageUrl: "https://images.pexels.com/photos/4056530/pexels-photo-4056530.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      link: "/workouts"
-    },
-    {
-      title: "30-Day Challenge",
-      description: "Take your fitness to the next level with our progressive 30-day program designed for consistent improvement.",
-      imageUrl: "https://images.pexels.com/photos/9316316/pexels-photo-9316316.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      link: "/workouts"
-    },
-    {
-      title: "Senior Vitality",
-      description: "Age-appropriate workouts that focus on mobility, strength, and balance for older adults.",
-      imageUrl: "https://images.pexels.com/photos/7991524/pexels-photo-7991524.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      link: "/workouts"
-    }
-  ];
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { duration: 0.5 } }
+  };
   
   return (
-    <Layout>
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-16">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-black opacity-60"></div>
-          <img 
-            src={heroImageUrl} 
-            alt="Person exercising" 
-            className="w-full h-full object-cover"
-          />
+    <div>
+
+      <section className="relative pt-16 md:pt-24 pb-20 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-500/10 to-secondary-500/5 dark:from-primary-900/20 dark:to-secondary-900/10 -z-10" />
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            className="flex flex-col items-center text-center"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.h1 
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-primary-600 to-secondary-500 text-transparent bg-clip-text"
+              variants={itemVariants}
+            >
+              Elevate Your Fitness Journey
+            </motion.h1>
+            
+            <motion.p
+              className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mb-10"
+              variants={itemVariants}
+            >
+              Transform your body and mind with personalized workouts, no equipment needed. 
+              Track your progress and achieve your fitness goals with BioBooster.
+            </motion.p>
+            
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4"
+              variants={itemVariants}
+            >
+              <Link to="/workout">
+                <Button variant="primary" size="lg">
+                  Start a Workout
+                </Button>
+              </Link>
+              <Link to="/exercises">
+                <Button variant="outline" size="lg">
+                  Browse Exercises
+                </Button>
+              </Link>
+            </motion.div>
+          </motion.div>
         </div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-2xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              Your Body, Your Workout, <span className="text-blue-400">No Equipment</span> Needed
-            </h1>
-            <p className="text-xl text-gray-200 mb-8">
-              Personalized workouts for everyone - beginners, fitness enthusiasts, teens, adults, and seniors. Start your journey to a better you today.
+      </section>
+      
+
+      <section className="py-16 bg-white dark:bg-gray-800">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold mb-4">Why Choose BioBooster?</h2>
+            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              Our platform offers everything you need to create an effective fitness routine that fits your lifestyle.
             </p>
-            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-              <Button 
-                size="lg" 
-                variant="primary" 
-                className="transform transition-transform hover:scale-105"
-                onClick={() => window.location.href = '/workouts'}
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <motion.div
+              whileHover={{ y: -10 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+            >
+              <Card className="p-6 h-full">
+                <div className="rounded-full bg-primary-100 dark:bg-primary-900 p-3 w-12 h-12 flex items-center justify-center mb-4">
+                  <Dumbbell className="w-6 h-6 text-primary-600 dark:text-primary-400" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Personalized Plans</h3>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Create custom workouts tailored to your fitness level, goals, and available equipment.
+                </p>
+              </Card>
+            </motion.div>
+            
+            <motion.div
+              whileHover={{ y: -10 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+            >
+              <Card className="p-6 h-full">
+                <div className="rounded-full bg-secondary-100 dark:bg-secondary-900 p-3 w-12 h-12 flex items-center justify-center mb-4">
+                  <Timer className="w-6 h-6 text-secondary-600 dark:text-secondary-400" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Time Efficiency</h3>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Quick and effective workouts that fit into your busy schedule, with built-in timers and rest periods.
+                </p>
+              </Card>
+            </motion.div>
+            
+            <motion.div
+              whileHover={{ y: -10 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+            >
+              <Card className="p-6 h-full">
+                <div className="rounded-full bg-accent-100 dark:bg-accent-900 p-3 w-12 h-12 flex items-center justify-center mb-4">
+                  <LineChart className="w-6 h-6 text-accent-600 dark:text-accent-400" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Progress Tracking</h3>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Monitor your achievements, track workout streaks, and visualize your fitness journey.
+                </p>
+              </Card>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+      
+
+      <section className="py-16 bg-gray-50 dark:bg-gray-900">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Workouts for Every Goal</h2>
+            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              Choose from a variety of workout categories designed for different fitness goals and experience levels.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { name: "Upper Body", icon: "💪", color: "from-blue-500 to-purple-500" },
+              { name: "Core Strength", icon: "🔄", color: "from-green-500 to-teal-500" },
+              { name: "Lower Body", icon: "🦵", color: "from-orange-500 to-red-500" },
+              { name: "Full Body", icon: "⚡", color: "from-pink-500 to-purple-500" },
+              { name: "Mobility", icon: "🧘", color: "from-teal-500 to-cyan-500" },
+              { name: "Quick Sessions", icon: "⏱️", color: "from-amber-500 to-orange-500" },
+              { name: "Senior Friendly", icon: "🌟", color: "from-emerald-500 to-green-500" },
+              { name: "Teen Workouts", icon: "🚀", color: "from-indigo-500 to-blue-500" }
+            ].map((category, index) => (
+              <motion.div
+                key={category.name}
+                whileHover={{ scale: 1.05 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
               >
-                Get Started
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="text-white border-white hover:bg-white/10 transition-all"
-                onClick={() => window.location.href = '/exercises'}
-              >
-                Browse Exercises
-              </Button>
+                <Link to="/workout" className="block">
+                  <div className={`rounded-xl overflow-hidden relative h-40 bg-gradient-to-br ${category.color} transition-transform duration-300`}>
+                    <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-white">
+                      <span className="text-3xl mb-2">{category.icon}</span>
+                      <h3 className="text-xl font-semibold text-center">{category.name}</h3>
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-gradient-to-r from-primary-600 to-secondary-600 dark:from-primary-800 dark:to-secondary-800 text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+            <div className="md:w-2/3 mb-8 md:mb-0">
+              <h2 className="text-3xl font-bold mb-4">Ready to Begin Your Fitness Journey?</h2>
+              <p className="text-white/80 max-w-xl">
+                Start today with BioBooster and transform your fitness routine with personalized workouts and progress tracking.
+              </p>
+            </div>
+            
+            <div>
+              {user ? (
+                <Link to="/workout/create">
+                  <Button 
+                    variant="accent" 
+                    size="lg"
+                    className="group"
+                  >
+                    Create Your Workout
+                    <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                  </Button>
+                </Link>
+              ) : (
+                <Link to="/profile">
+                  <Button 
+                    variant="accent" 
+                    size="lg"
+                    className="group"
+                  >
+                    Create Your Profile
+                    <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                  </Button>
+                </Link>
+              )}
             </div>
           </div>
         </div>
       </section>
       
-      {/* Features Section */}
-      <section className={`py-16 ${theme === 'dark' ? 'bg-gray-900' : 'bg-white'}`}>
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">Features That Make Us Different</h2>
-            <p className="text-xl max-w-3xl mx-auto text-gray-600 dark:text-gray-400">
-              We've designed FitLife to be the most user-friendly, effective, and motivating fitness platform available.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <Card 
-                key={index} 
-                className="p-6 hover:border-blue-500 transition-all duration-300"
-                hoverable
-              >
-                <div className={`
-                  p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4
-                  ${theme === 'dark' ? 'bg-blue-900 text-blue-400' : 'bg-blue-100 text-blue-600'}
-                `}>
-                  {feature.icon}
-                </div>
-                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                <p className={`${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-                  {feature.description}
-                </p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-      
-      {/* Programs Section */}
-      <section className={`py-16 ${theme === 'dark' ? 'bg-gray-800' : 'bg-gray-100'}`}>
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">Featured Programs</h2>
-            <p className="text-xl max-w-3xl mx-auto text-gray-600 dark:text-gray-400">
-              Choose a program that fits your needs and goals. All programs can be customized to your fitness level.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {programs.map((program, index) => (
-              <Card 
-                key={index} 
-                className="overflow-hidden hover:transform hover:scale-105 transition-all duration-300"
-                hoverable
-              >
-                <div className="h-48 overflow-hidden">
-                  <img 
-                    src={program.imageUrl} 
-                    alt={program.title} 
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">{program.title}</h3>
-                  <p className={`mb-4 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-                    {program.description}
-                  </p>
-                  <a 
-                    href={program.link}
-                    className={`
-                      font-medium flex items-center
-                      ${theme === 'dark' ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-700'}
-                    `}
-                  >
-                    Get Started <ArrowRight className="ml-1 h-4 w-4" />
-                  </a>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-      
-      {/* CTA Section */}
-      <section className="py-16 bg-blue-600 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-800"></div>
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Fitness Journey?</h2>
-          <p className="text-xl max-w-3xl mx-auto mb-8">
-            Join thousands of people who have already started their fitness journey with FitLife. No equipment, no gym, just you and your commitment.
-          </p>
-          <Button 
-            size="lg"
-            variant="outline"
-            className="border-white text-white hover:bg-white hover:text-blue-600 transform transition-transform hover:scale-105"
-            onClick={() => window.location.href = '/workouts'}
-          >
-            Start Your Free Program Today
-          </Button>
-        </div>
-      </section>
-      
-      {/* Testimonials Section */}
-      <section className={`py-16 ${theme === 'dark' ? 'bg-gray-900' : 'bg-white'}`}>
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">What Our Users Say</h2>
-            <p className="text-xl max-w-3xl mx-auto text-gray-600 dark:text-gray-400">
-              Hear from people who have transformed their fitness with our platform.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Testimonial 1 */}
-            <Card className="p-6">
-              <div className="flex flex-col items-center text-center">
-                <div className="w-20 h-20 rounded-full overflow-hidden mb-4">
-                  <img src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=300" alt="User" className="w-full h-full object-cover" />
-                </div>
-                <h3 className="text-lg font-semibold">Sarah J.</h3>
-                <p className="text-sm text-gray-500 mb-4">Lost 15lbs in 3 months</p>
-                <p className={`${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-                  "I love how I can work out anywhere without any equipment. The personalized workouts keep me challenged and motivated!"
-                </p>
-              </div>
-            </Card>
-            
-            {/* Testimonial 2 */}
-            <Card className="p-6">
-              <div className="flex flex-col items-center text-center">
-                <div className="w-20 h-20 rounded-full overflow-hidden mb-4">
-                  <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=300" alt="User" className="w-full h-full object-cover" />
-                </div>
-                <h3 className="text-lg font-semibold">Mike T.</h3>
-                <p className="text-sm text-gray-500 mb-4">Building strength at 58</p>
-                <p className={`${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-                  "The senior-focused workouts have helped me regain mobility and strength. I feel 10 years younger already!"
-                </p>
-              </div>
-            </Card>
-            
-            {/* Testimonial 3 */}
-            <Card className="p-6">
-              <div className="flex flex-col items-center text-center">
-                <div className="w-20 h-20 rounded-full overflow-hidden mb-4">
-                  <img src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&w=300" alt="User" className="w-full h-full object-cover" />
-                </div>
-                <h3 className="text-lg font-semibold">Jamie L.</h3>
-                <p className="text-sm text-gray-500 mb-4">College student</p>
-                <p className={`${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-                  "I can fit these workouts into my busy schedule! I love the achievement system that keeps me coming back."
-                </p>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
-    </Layout>
-  );
-};
 
-export default Home;
+      {user && user.streakCount > 0 && (
+        <section className="py-10 bg-white dark:bg-gray-800">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-center">
+              <div className="bg-gradient-to-r from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-xl p-6 flex items-center space-x-4">
+                <div className="w-12 h-12 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center">
+                  <FlameIcon className="w-6 h-6 text-primary-600 dark:text-primary-400" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold">Current Streak: {user.streakCount} days</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Keep it going! Don't break your streak.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+    </div>
+  );
+}

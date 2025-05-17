@@ -64,7 +64,7 @@ const WorkoutSession = ({ workout, onComplete, onExit }: WorkoutSessionProps) =>
   
   return (
     <div className="space-y-6">
-      {/* Progress Bar */}
+    
       <div className="relative h-2 rounded-full overflow-hidden bg-gray-200 dark:bg-gray-700">
         <div 
           className="absolute left-0 top-0 h-full bg-blue-500 transition-all duration-300"
@@ -75,7 +75,7 @@ const WorkoutSession = ({ workout, onComplete, onExit }: WorkoutSessionProps) =>
         ></div>
       </div>
       
-      {/* Current Exercise Info */}
+  
       <Card className="p-6">
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-2xl font-bold">{exercise.name}</h2>
@@ -104,7 +104,7 @@ const WorkoutSession = ({ workout, onComplete, onExit }: WorkoutSessionProps) =>
           </ol>
         </div>
         
-        {/* Timer */}
+    
         <WorkoutTimer 
           exerciseDuration={currentExercise.durationInSeconds}
           restDuration={currentExercise.restAfterInSeconds}
@@ -112,7 +112,7 @@ const WorkoutSession = ({ workout, onComplete, onExit }: WorkoutSessionProps) =>
         />
       </Card>
       
-      {/* Controls */}
+ 
       <div className="flex justify-between">
         <Button variant="outline" onClick={onExit}>
           Exit Workout

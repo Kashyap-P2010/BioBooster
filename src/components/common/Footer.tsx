@@ -12,7 +12,7 @@ const Footer = () => {
     <footer className={`py-8 ${footerClass}`}>
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Company Info */}
+          {}
           <div>
             <h3 className="text-lg font-semibold mb-4">FitLife</h3>
             <p className="mb-4">Helping you achieve your fitness goals with no equipment needed.</p>
@@ -29,7 +29,7 @@ const Footer = () => {
             </div>
           </div>
           
-          {/* Quick Links */}
+          {}
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
@@ -40,7 +40,7 @@ const Footer = () => {
             </ul>
           </div>
           
-          {/* Programs */}
+          {}
           <div>
             <h3 className="text-lg font-semibold mb-4">Programs</h3>
             <ul className="space-y-2">
@@ -51,7 +51,7 @@ const Footer = () => {
             </ul>
           </div>
           
-          {/* Support */}
+          {}
           <div>
             <h3 className="text-lg font-semibold mb-4">Support</h3>
             <ul className="space-y-2">
@@ -63,7 +63,7 @@ const Footer = () => {
           </div>
         </div>
         
-        {/* Copyright */}
+        {}
         <div className="mt-8 pt-8 border-t border-gray-700 text-center">
           <p>
             © {new Date().getFullYear()} FitLife. Made with 

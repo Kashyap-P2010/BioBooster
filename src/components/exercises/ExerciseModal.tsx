@@ -27,7 +27,6 @@ const ExerciseModal = ({ exercise, onClose }: ExerciseModalProps) => {
         `}
       >
         <div className="relative">
-          {/* Close button */}
           <button 
             onClick={onClose}
             className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black bg-opacity-50 text-white hover:bg-opacity-70 transition-all"
@@ -36,7 +35,6 @@ const ExerciseModal = ({ exercise, onClose }: ExerciseModalProps) => {
             <X className="h-6 w-6" />
           </button>
           
-          {/* Exercise image */}
           <div className="h-64 overflow-hidden">
             {/* TODO: Replace with real images later */}
             <img 
@@ -47,7 +45,6 @@ const ExerciseModal = ({ exercise, onClose }: ExerciseModalProps) => {
           </div>
         </div>
         
-        {/* Content */}
         <div className="p-6">
           <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
             <div>
@@ -81,7 +78,7 @@ const ExerciseModal = ({ exercise, onClose }: ExerciseModalProps) => {
             </div>
           </div>
           
-          {/* Instructions */}
+        
           <div className="mb-6">
             <h3 className="text-lg font-semibold mb-3">Instructions</h3>
             <ol className="space-y-3">
@@ -105,7 +102,7 @@ const ExerciseModal = ({ exercise, onClose }: ExerciseModalProps) => {
             </ol>
           </div>
           
-          {/* Modifications (if available) */}
+          
           {exercise.modifications && (
             <div className="mb-6">
               <h3 className="text-lg font-semibold mb-3">Modifications</h3>
@@ -129,7 +126,7 @@ const ExerciseModal = ({ exercise, onClose }: ExerciseModalProps) => {
             </div>
           )}
           
-          {/* Action buttons */}
+          
           <div className="flex flex-wrap gap-3 mt-6">
             <Button 
               variant="primary"

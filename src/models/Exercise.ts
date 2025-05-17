@@ -7,11 +7,11 @@ export interface Exercise {
   imageUrl?: string;
   videoUrl?: string;
   instructions: string[];
-  duration?: number; // in seconds, for timed exercises like planks
+  duration?: number; 
   recommended?: {
     reps?: { min: number; max: number };
     sets?: { min: number; max: number };
-    restBetweenSets?: number; // in seconds
+    restBetweenSets?: number;
   };
   equipment: Equipment[];
   ageGroups: AgeGroup[];
@@ -44,9 +44,9 @@ export enum Equipment {
 }
 
 export enum AgeGroup {
-  Teen = 'teen', // 13-17
-  Adult = 'adult', // 18-45
-  Senior = 'senior' // 46+
+  Teen = 'teen',
+  Adult = 'adult', 
+  Senior = 'senior' 
 }
 
 export interface ExerciseVariation {
@@ -59,7 +59,7 @@ export interface ExerciseSet {
   exerciseId: string;
   sets: number;
   reps: number;
-  duration?: number; // For timed exercises
+  duration?: number; 
   completed: boolean;
   notes?: string;
 }

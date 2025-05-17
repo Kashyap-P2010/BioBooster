@@ -34,7 +34,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
 
-  // On mount, check if user is already logged in
+  
   useEffect(() => {
     const storedUser = localStorage.getItem('biobooster_user');
     if (storedUser) {
@@ -49,18 +49,17 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     }
   }, []);
 
-  // Helper to save users to local storage
+
   const saveUsers = (users: User[]) => {
     localStorage.setItem('biobooster_users', JSON.stringify(users));
   };
 
-  // Helper to get users from local storage
+
   const getUsers = (): User[] => {
     const storedUsers = localStorage.getItem('biobooster_users');
     return storedUsers ? JSON.parse(storedUsers) : [];
   };
 
-  // Save current user to local storage whenever it changes
   useEffect(() => {
     if (currentUser) {
       localStorage.setItem('biobooster_user', JSON.stringify(currentUser));
@@ -76,13 +75,12 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     );
 
     if (user) {
-      // Update last login
+   
       const updatedUser = {
         ...user,
         lastLogin: new Date(),
       };
       
-      // Save updated user back to users list
       const updatedUsers = users.map(u => 
         u.id === updatedUser.id ? updatedUser : u
       );
@@ -99,7 +97,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const register = async (username: string, password: string, age: number): Promise<boolean> => {
     const users = getUsers();
     
-    // Check if username already exists
+ 
     if (users.some((u) => u.username === username)) {
       return false;
     }
@@ -138,7 +136,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       },
     };
 
-    // Update in users list
+
     const users = getUsers();
     const updatedUsers = users.map(u => 
       u.id === currentUser.id ? updatedUser : u
@@ -156,7 +154,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       streak: currentUser.streak + increment,
     };
 
-    // Update in users list
+ 
     const users = getUsers();
     const updatedUsers = users.map(u => 
       u.id === currentUser.id ? updatedUser : u
@@ -174,7 +172,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       completedWorkouts: currentUser.completedWorkouts + increment,
     };
 
-    // Update in users list
     const users = getUsers();
     const updatedUsers = users.map(u => 
       u.id === currentUser.id ? updatedUser : u

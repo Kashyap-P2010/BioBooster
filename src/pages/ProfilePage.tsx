@@ -13,7 +13,7 @@ const ProfilePage: React.FC = () => {
     fitnessLevel: FitnessLevel.Beginner,
     fitnessGoals: [] as FitnessGoal[],
     workoutReminders: true,
-    workoutDays: [1, 3, 5], // Monday, Wednesday, Friday
+    workoutDays: [1, 3, 5], 
     preferredWorkoutDuration: 30
   });
 
@@ -68,7 +68,7 @@ const ProfilePage: React.FC = () => {
     <div className="min-h-screen bg-gray-50 py-10">
       <div className="container-custom">
         <div className="flex flex-col md:flex-row gap-8">
-          {/* Profile Overview */}
+          {}
           <div className="md:w-1/3">
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
               <div className="bg-primary-500 p-6 text-white">
@@ -104,7 +104,7 @@ const ProfilePage: React.FC = () => {
               </div>
             </div>
             
-            {/* Stats Card */}
+            {}
             {workoutStats && (
               <div className="bg-white rounded-lg shadow-md overflow-hidden mt-6">
                 <div className="p-6">
@@ -145,7 +145,7 @@ const ProfilePage: React.FC = () => {
               </div>
             )}
 
-            {/* Logout Button */}
+            {}
             <div className="mt-6">
               <button
                 onClick={logout}
@@ -156,7 +156,7 @@ const ProfilePage: React.FC = () => {
             </div>
           </div>
 
-          {/* Profile Settings */}
+          {}
           <div className="md:w-2/3">
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
               <div className="p-6 border-b">
@@ -199,7 +199,7 @@ const ProfilePage: React.FC = () => {
                     animate={{ opacity: 1 }}
                     className="space-y-6"
                   >
-                    {/* Fitness Level */}
+                    {}
                     <div>
                       <h3 className="text-md font-medium mb-2 text-gray-800">Fitness Level</h3>
                       <div className="space-y-2">
@@ -218,7 +218,7 @@ const ProfilePage: React.FC = () => {
                       </div>
                     </div>
                     
-                    {/* Fitness Goals */}
+                    {}
                     <div>
                       <h3 className="text-md font-medium mb-2 text-gray-800">Fitness Goals</h3>
                       <div className="space-y-2">
@@ -236,7 +236,7 @@ const ProfilePage: React.FC = () => {
                       </div>
                     </div>
                     
-                    {/* Workout Days */}
+                    {}
                     <div>
                       <h3 className="text-md font-medium mb-2 text-gray-800">Preferred Workout Days</h3>
                       <div className="flex flex-wrap gap-2">
@@ -257,7 +257,7 @@ const ProfilePage: React.FC = () => {
                       </div>
                     </div>
                     
-                    {/* Workout Duration */}
+                    {}
                     <div>
                       <h3 className="text-md font-medium mb-2 text-gray-800">
                         Preferred Workout Duration: {settings.preferredWorkoutDuration} minutes
@@ -277,7 +277,7 @@ const ProfilePage: React.FC = () => {
                       </div>
                     </div>
                     
-                    {/* Workout Reminders */}
+                    {}
                     <div>
                       <h3 className="text-md font-medium mb-2 text-gray-800">Notifications</h3>
                       <label className="flex items-center">
@@ -293,13 +293,13 @@ const ProfilePage: React.FC = () => {
                   </motion.div>
                 ) : (
                   <div className="space-y-6">
-                    {/* Fitness Level */}
+                    {}
                     <div>
                       <h3 className="text-md font-medium mb-1 text-gray-800">Fitness Level</h3>
                       <p className="text-gray-600 capitalize">{settings.fitnessLevel}</p>
                     </div>
                     
-                    {/* Fitness Goals */}
+                    {}
                     <div>
                       <h3 className="text-md font-medium mb-1 text-gray-800">Fitness Goals</h3>
                       {settings.fitnessGoals.length > 0 ? (
@@ -315,7 +315,7 @@ const ProfilePage: React.FC = () => {
                       )}
                     </div>
                     
-                    {/* Workout Days */}
+                    {}
                     <div>
                       <h3 className="text-md font-medium mb-1 text-gray-800">Preferred Workout Days</h3>
                       <div className="flex flex-wrap gap-2">
@@ -334,13 +334,13 @@ const ProfilePage: React.FC = () => {
                       </div>
                     </div>
                     
-                    {/* Workout Duration */}
+                    {}
                     <div>
                       <h3 className="text-md font-medium mb-1 text-gray-800">Preferred Workout Duration</h3>
                       <p className="text-gray-600">{settings.preferredWorkoutDuration} minutes</p>
                     </div>
                     
-                    {/* Workout Reminders */}
+                    {}
                     <div>
                       <h3 className="text-md font-medium mb-1 text-gray-800">Notifications</h3>
                       <p className="text-gray-600">
@@ -352,7 +352,7 @@ const ProfilePage: React.FC = () => {
               </div>
             </div>
 
-            {/* Activity Calendar */}
+            {}
             <div className="bg-white rounded-lg shadow-md overflow-hidden mt-6">
               <div className="p-6">
                 <h2 className="text-lg font-semibold mb-4 text-gray-800 flex items-center">
@@ -362,8 +362,8 @@ const ProfilePage: React.FC = () => {
                 
                 <div className="flex flex-wrap gap-1">
                   {Array.from({ length: 30 }, (_, i) => {
-                    // This would be replaced with actual data from workout logs
-                    const intensity = Math.floor(Math.random() * 4); // 0 = no workout, 1-3 = workout intensity
+                    
+                    const intensity = Math.floor(Math.random() * 4); 
                     return (
                       <div
                         key={i}

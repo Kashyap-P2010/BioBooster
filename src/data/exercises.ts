@@ -1,768 +1,508 @@
-import { Exercise } from '../types/exercise';
+import { Exercise } from '../types';
 
 export const exercises: Exercise[] = [
-  // Beginner Exercises
   {
-    id: 'jumping-jacks',
-    name: 'Jumping Jacks',
-    description: 'A full-body exercise that increases heart rate and improves coordination.',
-    muscleGroups: ['full-body'],
-    difficulty: 'beginner',
-    durationInSeconds: 30,
-    imageUrl: 'jumping-jacks.jpg',
-    instructions: [
-      'Stand with your feet together and arms at your sides.',
-      'Jump and spread your feet shoulder-width apart while raising your arms above your head.',
-      'Jump again and return to the starting position.',
-      'Repeat at a brisk pace.'
-    ],
-    modifications: {
-      easier: 'Step out to the side instead of jumping.',
-      harder: 'Increase speed or add a squat between jumps.'
-    }
-  },
-  {
-    id: 'wall-sit',
-    name: 'Wall Sit',
-    description: 'A static exercise that builds strength and endurance in your lower body.',
-    muscleGroups: ['legs'],
-    difficulty: 'beginner',
-    durationInSeconds: 30,
-    imageUrl: 'wall-sit.jpg',
-    instructions: [
-      'Stand with your back against a wall, feet shoulder-width apart.',
-      'Slide down until your thighs are parallel to the ground.',
-      'Keep your knees above your ankles, not in front of your toes.',
-      'Hold the position for the designated time.'
-    ]
-  },
-  {
-    id: 'arm-circles',
-    name: 'Arm Circles',
-    description: 'A simple exercise that warms up your shoulders and improves mobility.',
-    muscleGroups: ['shoulders', 'arms'],
-    difficulty: 'beginner',
-    durationInSeconds: 30,
-    imageUrl: 'arm-circles.jpg',
-    instructions: [
-      'Stand with your feet shoulder-width apart.',
-      'Extend your arms straight out to the sides at shoulder height.',
-      'Move your arms in small circles, gradually increasing the size.',
-      'Reverse direction after half the time.'
-    ]
-  },
-  {
-    id: 'high-knees-slow',
-    name: 'High Knees (slow pace)',
-    description: 'A cardio exercise that engages your core and leg muscles at a manageable pace.',
-    muscleGroups: ['legs', 'abs'],
-    difficulty: 'beginner',
-    durationInSeconds: 30,
-    imageUrl: 'high-knees-slow.jpg',
-    instructions: [
-      'Stand with your feet hip-width apart.',
-      'Slowly lift one knee to hip height, then lower it.',
-      'Repeat with the other knee in a marching motion.',
-      'Maintain a controlled pace.'
-    ]
-  },
-  {
-    id: 'knee-pushups',
-    name: 'Knee Push-Ups',
-    description: 'A modified push-up that builds upper body strength with reduced difficulty.',
-    muscleGroups: ['chest', 'arms', 'shoulders'],
-    difficulty: 'beginner',
-    durationInSeconds: 30,
-    imageUrl: 'knee-pushups.jpg',
-    instructions: [
-      'Start on all fours with hands slightly wider than shoulder-width apart.',
-      'Lower your knees to the ground and cross your ankles.',
-      'Lower your chest toward the ground by bending your elbows.',
-      'Push back up to the starting position.'
-    ]
-  },
-  {
-    id: 'standing-calf-raises',
-    name: 'Standing Calf Raises',
-    description: 'A simple exercise to strengthen your calves and improve ankle stability.',
-    muscleGroups: ['legs'],
-    difficulty: 'beginner',
-    durationInSeconds: 30,
-    imageUrl: 'calf-raises.jpg',
-    instructions: [
-      'Stand with feet hip-width apart.',
-      'Raise your heels off the ground, coming up onto your toes.',
-      'Lower back down with control.',
-      'Repeat the movement.'
-    ]
-  },
-  {
-    id: 'glute-bridges',
-    name: 'Glute Bridges',
-    description: 'An exercise that targets your glutes and lower back.',
-    muscleGroups: ['legs', 'back'],
-    difficulty: 'beginner',
-    durationInSeconds: 30,
-    imageUrl: 'glute-bridges.jpg',
-    instructions: [
-      'Lie on your back with knees bent and feet flat.',
-      'Lift your hips off the ground by squeezing your glutes.',
-      'Hold at the top for a moment.',
-      'Lower back down with control.'
-    ]
-  },
-  {
-    id: 'bird-dog',
-    name: 'Bird-Dog',
-    description: 'A core stability exercise that improves balance and coordination.',
-    muscleGroups: ['abs', 'back'],
-    difficulty: 'beginner',
-    durationInSeconds: 30,
-    imageUrl: 'bird-dog.jpg',
-    instructions: [
-      'Start on hands and knees.',
-      'Extend opposite arm and leg.',
-      'Hold for a moment, maintaining balance.',
-      'Return to start and switch sides.'
-    ]
-  },
-  {
-    id: 'side-leg-raises',
-    name: 'Side Leg Raises',
-    description: 'Targets your outer thighs and hip muscles.',
-    muscleGroups: ['legs'],
-    difficulty: 'beginner',
-    durationInSeconds: 30,
-    imageUrl: 'side-leg-raises.jpg',
-    instructions: [
-      'Lie on your side with legs extended.',
-      'Lift top leg up while keeping it straight.',
-      'Lower back down with control.',
-      'Complete all reps before switching sides.'
-    ]
-  },
-  {
-    id: 'marching-in-place',
-    name: 'Marching in Place',
-    description: 'A low-impact cardio exercise that raises heart rate.',
-    muscleGroups: ['full-body'],
-    difficulty: 'beginner',
-    durationInSeconds: 30,
-    imageUrl: 'marching.jpg',
-    instructions: [
-      'Stand tall with good posture.',
-      'Lift knees high, alternating legs.',
-      'Swing arms naturally.',
-      'Maintain a steady rhythm.'
-    ]
-  },
-  {
-    id: 'standing-oblique-crunch',
-    name: 'Standing Oblique Crunch',
-    description: 'Works your side abs while standing.',
-    muscleGroups: ['abs'],
-    difficulty: 'beginner',
-    durationInSeconds: 30,
-    imageUrl: 'oblique-crunch.jpg',
-    instructions: [
-      'Stand with feet shoulder-width apart.',
-      'Place hands behind head.',
-      'Lift knee while bringing elbow to meet it.',
-      'Alternate sides.'
-    ]
-  },
-  {
-    id: 'toe-touches',
-    name: 'Toe Touches',
-    description: 'A simple exercise that improves hamstring flexibility and core strength.',
-    muscleGroups: ['abs', 'legs'],
-    difficulty: 'beginner',
-    durationInSeconds: 30,
-    imageUrl: 'toe-touches.jpg',
-    instructions: [
-      'Stand with feet shoulder-width apart.',
-      'Bend forward at the waist, keeping legs straight.',
-      'Reach for your toes.',
-      'Return to standing position.'
-    ]
-  },
-  {
-    id: 'shoulder-rolls',
-    name: 'Shoulder Rolls',
-    description: 'A gentle exercise to release tension in the shoulders and upper back.',
-    muscleGroups: ['shoulders'],
-    difficulty: 'beginner',
-    durationInSeconds: 30,
-    imageUrl: 'shoulder-rolls.jpg',
-    instructions: [
-      'Stand or sit with good posture.',
-      'Roll shoulders forward in circular motion.',
-      'Roll shoulders backward in circular motion.',
-      'Keep movements slow and controlled.'
-    ]
-  },
-  {
-    id: 'wall-pushups',
-    name: 'Wall Push-Ups',
-    description: 'A beginner-friendly version of push-ups using a wall for support.',
-    muscleGroups: ['chest', 'arms', 'shoulders'],
-    difficulty: 'beginner',
-    durationInSeconds: 30,
-    imageUrl: 'wall-pushups.jpg',
-    instructions: [
-      'Stand facing wall at arm\'s length.',
-      'Place hands on wall at shoulder height.',
-      'Lower chest toward wall by bending elbows.',
-      'Push back to starting position.'
-    ]
-  },
-  {
-    id: 'air-punches',
-    name: 'Air Punches',
-    description: 'A cardio exercise that works your arms and core while raising heart rate.',
-    muscleGroups: ['arms', 'shoulders', 'abs'],
-    difficulty: 'beginner',
-    durationInSeconds: 30,
-    imageUrl: 'air-punches.jpg',
-    instructions: [
-      'Stand in boxing stance.',
-      'Alternate punching arms forward.',
-      'Keep core engaged.',
-      'Maintain quick, controlled movements.'
-    ]
-  },
-  
-  // Intermediate Exercises
-  {
-    id: 'pushups',
-    name: 'Push-Ups',
-    description: 'A fundamental exercise that strengthens your chest, shoulders, and triceps.',
-    muscleGroups: ['chest', 'shoulders', 'arms'],
+    id: 'pushups-regular',
+    name: 'Push-ups (Regular)',
+    category: 'upper-body',
     difficulty: 'intermediate',
-    durationInSeconds: 30,
-    imageUrl: 'pushups.jpg',
-    instructions: [
-      'Start in a high plank position with hands slightly wider than shoulder-width apart.',
-      'Keep your body in a straight line from head to heels.',
-      'Lower your chest toward the ground by bending your elbows.',
-      'Push back up to the starting position.'
-    ]
+    instructions: 'Start in a plank position with hands shoulder-width apart. Lower your body until your chest nearly touches the floor, then push back up.',
+    targetMuscles: ['chest', 'shoulders', 'triceps'],
+    imageUrl: '/src/components/images/pushups-regular.jpg'
   },
   {
-    id: 'plank',
-    name: 'Plank',
-    description: 'A core strengthening exercise that also engages your shoulders and back.',
-    muscleGroups: ['abs', 'shoulders', 'back'],
-    difficulty: 'intermediate',
-    durationInSeconds: 30,
-    imageUrl: 'plank.jpg',
-    instructions: [
-      'Begin in a forearm plank position, elbows directly beneath your shoulders.',
-      'Keep your body in a straight line from head to heels.',
-      'Engage your core and glutes.',
-      'Hold the position for the designated time.'
-    ]
+    id: 'diamond-pushups',
+    name: 'Diamond Push-ups',
+    category: 'upper-body',
+    difficulty: 'advanced',
+    instructions: 'Form a diamond shape with your hands under your chest. Keep your elbows close to your body as you lower and push up.',
+    targetMuscles: ['triceps', 'chest', 'shoulders'],
+    imageUrl: '/src/components/images/diamond-pushups.jpg'
   },
   {
-    id: 'squats',
-    name: 'Squats',
-    description: 'A lower body exercise that builds strength in your quadriceps, hamstrings, and glutes.',
-    muscleGroups: ['legs'],
+    id: 'wide-pushups',
+    name: 'Wide Push-ups',
+    category: 'upper-body',
     difficulty: 'intermediate',
-    durationInSeconds: 30,
-    imageUrl: 'squats.jpg',
-    instructions: [
-      'Stand with feet shoulder-width apart, toes slightly turned out.',
-      'Bend your knees and push your hips back as if sitting in a chair.',
-      'Lower until your thighs are parallel to the ground or as far as comfortable.',
-      'Push through your heels to return to standing position.'
-    ]
+    instructions: 'Place your hands wider than shoulder-width apart. Lower your body and push back up, focusing on chest engagement.',
+    targetMuscles: ['chest', 'shoulders'],
+    imageUrl: '/src/components/images/wide-pushups.jpg'
   },
   {
-    id: 'mountain-climbers',
-    name: 'Mountain Climbers',
-    description: 'A dynamic exercise that combines strength and cardio for a full-body workout.',
-    muscleGroups: ['full-body', 'abs'],
+    id: 'pike-pushups',
+    name: 'Pike Push-ups',
+    category: 'upper-body',
     difficulty: 'intermediate',
-    durationInSeconds: 30,
-    imageUrl: 'mountain-climbers.jpg',
-    instructions: [
-      'Start in a high plank position with hands under shoulders.',
-      'Drive one knee toward your chest, then quickly switch legs.',
-      'Continue alternating legs in a running motion.',
-      'Keep your core tight and hips level throughout.'
-    ]
-  },
-  {
-    id: 'reverse-lunges',
-    name: 'Reverse Lunges',
-    description: 'A unilateral leg exercise that improves balance and builds lower body strength.',
-    muscleGroups: ['legs'],
-    difficulty: 'intermediate',
-    durationInSeconds: 30,
-    imageUrl: 'reverse-lunges.jpg',
-    instructions: [
-      'Stand with feet hip-width apart.',
-      'Step one foot back and lower your body until both knees form 90-degree angles.',
-      'Push through your front heel to return to standing.',
-      'Repeat on the other side.'
-    ]
+    instructions: 'Form an inverted V with your body, hands and feet on the ground. Lower your head toward the ground and push back up.',
+    targetMuscles: ['shoulders', 'triceps'],
+    imageUrl: '/src/components/images/pike-pushups.jpg'
   },
   {
     id: 'triceps-dips',
     name: 'Triceps Dips',
-    description: 'Builds strength in your triceps using a chair or elevated surface.',
-    muscleGroups: ['arms'],
+    category: 'upper-body',
     difficulty: 'intermediate',
-    durationInSeconds: 30,
-    imageUrl: 'triceps-dips.jpg',
-    instructions: [
-      'Place hands on edge of chair behind you.',
-      'Lower body by bending elbows.',
-      'Push back up to starting position.',
-      'Keep elbows close to body.'
-    ]
+    instructions: 'Using a chair or bench, place hands on the edge with fingers facing forward. Lower your body by bending your elbows, then push back up.',
+    targetMuscles: ['triceps', 'shoulders', 'chest'],
+    imageUrl: '/src/components/images/triceps-dips.jpg'
   },
   {
-    id: 'bicycle-crunches',
-    name: 'Bicycle Crunches',
-    description: 'A dynamic core exercise targeting multiple ab muscles.',
-    muscleGroups: ['abs'],
-    difficulty: 'intermediate',
-    durationInSeconds: 30,
-    imageUrl: 'bicycle-crunches.jpg',
-    instructions: [
-      'Lie on back, hands behind head.',
-      'Lift shoulders off ground.',
-      'Bring opposite elbow to opposite knee.',
-      'Switch sides in pedaling motion.'
-    ]
+    id: 'incline-pushups',
+    name: 'Incline Push-ups',
+    category: 'upper-body',
+    difficulty: 'beginner',
+    instructions: 'Place hands on an elevated surface like a bench or step. Perform a push-up while keeping your body straight.',
+    targetMuscles: ['chest', 'shoulders', 'triceps'],
+    imageUrl: '/src/components/images/incline-pushups.jpg'
   },
   {
-    id: 'russian-twists',
-    name: 'Russian Twists',
-    description: 'Targets obliques and core with rotational movement.',
-    muscleGroups: ['abs'],
-    difficulty: 'intermediate',
-    durationInSeconds: 30,
-    imageUrl: 'russian-twists.jpg',
-    instructions: [
-      'Sit with knees bent, feet off ground.',
-      'Lean back slightly, keeping back straight.',
-      'Rotate torso from side to side.',
-      'Keep feet elevated throughout.'
-    ]
+    id: 'handstand-pushups',
+    name: 'Handstand Push-ups',
+    category: 'upper-body',
+    difficulty: 'advanced',
+    instructions: 'Get into a handstand position against a wall. Lower your head toward the ground and push back up.',
+    targetMuscles: ['shoulders', 'triceps', 'upper back'],
+    imageUrl: '/src/components/images/handstand-pushups.jpg'
   },
   {
-    id: 'side-planks',
-    name: 'Side Planks',
-    description: 'Strengthens obliques and improves core stability.',
-    muscleGroups: ['abs', 'shoulders'],
-    difficulty: 'intermediate',
-    durationInSeconds: 30,
-    imageUrl: 'side-planks.jpg',
-    instructions: [
-      'Lie on side, prop up on forearm.',
-      'Lift hips off ground.',
-      'Hold position, keeping body straight.',
-      'Switch sides after time.'
-    ]
-  },
-  {
-    id: 'jump-squats',
-    name: 'Jump Squats',
-    description: 'A plyometric exercise that builds explosive power in legs.',
-    muscleGroups: ['legs'],
-    difficulty: 'intermediate',
-    durationInSeconds: 30,
-    imageUrl: 'jump-squats.jpg',
-    instructions: [
-      'Start in squat position.',
-      'Explode upward into jump.',
-      'Land softly back in squat.',
-      'Maintain controlled movement.'
-    ]
-  },
-  {
-    id: 'donkey-kicks',
-    name: 'Donkey Kicks',
-    description: 'Targets glutes and hamstrings while improving hip mobility.',
-    muscleGroups: ['legs'],
-    difficulty: 'intermediate',
-    durationInSeconds: 30,
-    imageUrl: 'donkey-kicks.jpg',
-    instructions: [
-      'Start on hands and knees.',
-      'Kick one leg back and up.',
-      'Keep knee bent at 90 degrees.',
-      'Lower and repeat.'
-    ]
-  },
-  {
-    id: 'flutter-kicks',
-    name: 'Flutter Kicks',
-    description: 'A challenging core exercise that targets lower abs.',
-    muscleGroups: ['abs'],
-    difficulty: 'intermediate',
-    durationInSeconds: 30,
-    imageUrl: 'flutter-kicks.jpg',
-    instructions: [
-      'Lie on back, legs extended.',
-      'Lift legs slightly off ground.',
-      'Alternate kicking legs up and down.',
-      'Keep lower back pressed to floor.'
-    ]
-  },
-  {
-    id: 'bear-crawl',
-    name: 'Bear Crawl',
-    description: 'A full-body movement that improves coordination and strength.',
-    muscleGroups: ['full-body'],
-    difficulty: 'intermediate',
-    durationInSeconds: 30,
-    imageUrl: 'bear-crawl.jpg',
-    instructions: [
-      'Start on hands and feet.',
-      'Move forward, keeping hips low.',
-      'Alternate opposite hand and foot.',
-      'Maintain core engagement.'
-    ]
-  },
-  {
-    id: 'jumping-lunges',
-    name: 'Jumping Lunges',
-    description: 'A dynamic leg exercise that builds power and endurance.',
-    muscleGroups: ['legs'],
-    difficulty: 'intermediate',
-    durationInSeconds: 30,
-    imageUrl: 'jumping-lunges.jpg',
-    instructions: [
-      'Start in lunge position.',
-      'Jump and switch legs mid-air.',
-      'Land softly in lunge.',
-      'Continue alternating legs.'
-    ]
-  },
-  {
-    id: 'superman-hold',
-    name: 'Superman Hold',
-    description: 'Strengthens lower back and improves posture.',
-    muscleGroups: ['back'],
-    difficulty: 'intermediate',
-    durationInSeconds: 30,
-    imageUrl: 'superman-hold.jpg',
-    instructions: [
-      'Lie face down, arms extended.',
-      'Lift arms and legs off ground.',
-      'Hold position.',
-      'Lower with control.'
-    ]
-  },
-  {
-    id: 'inchworm-walkouts',
-    name: 'Inchworm Walkouts',
-    description: 'A dynamic stretch that builds shoulder strength and hamstring flexibility.',
-    muscleGroups: ['full-body'],
-    difficulty: 'intermediate',
-    durationInSeconds: 30,
-    imageUrl: 'inchworm-walkouts.jpg',
-    instructions: [
-      'Stand tall, bend to touch toes.',
-      'Walk hands out to plank.',
-      'Hold plank briefly.',
-      'Walk feet back to hands.'
-    ]
-  },
-  {
-    id: 'skaters',
-    name: 'Skaters',
-    description: 'A lateral movement that improves balance and leg strength.',
-    muscleGroups: ['legs'],
-    difficulty: 'intermediate',
-    durationInSeconds: 30,
-    imageUrl: 'skaters.jpg',
-    instructions: [
-      'Jump sideways landing on one leg.',
-      'Touch opposite hand to ground.',
-      'Jump to other side.',
-      'Continue alternating sides.'
-    ]
+    id: 'arm-circles',
+    name: 'Arm Circles',
+    category: 'upper-body',
+    difficulty: 'beginner',
+    instructions: 'Extend arms straight out to sides at shoulder height. Make small circular motions, gradually increasing circle size.',
+    targetMuscles: ['shoulders', 'upper back'],
+    imageUrl: '/src/components/images/arm-circles.jpg'
   },
   {
     id: 'plank-shoulder-taps',
     name: 'Plank Shoulder Taps',
-    description: 'Challenges core stability while engaging shoulders.',
-    muscleGroups: ['abs', 'shoulders'],
+    category: 'upper-body',
     difficulty: 'intermediate',
-    durationInSeconds: 30,
-    imageUrl: 'plank-shoulder-taps.jpg',
-    instructions: [
-      'Start in high plank.',
-      'Tap opposite shoulder with hand.',
-      'Keep hips stable.',
-      'Alternate sides.'
-    ]
+    instructions: 'Start in a high plank position. Tap your left shoulder with your right hand, then right shoulder with left hand, alternating while maintaining a stable core.',
+    targetMuscles: ['shoulders', 'core', 'chest'],
+    imageUrl: '/src/components/images/plank-shoulder-taps.jpg'
   },
   {
-    id: 'dead-bug',
-    name: 'Dead Bug',
-    description: 'A core exercise that promotes stability and coordination.',
-    muscleGroups: ['abs'],
+    id: 'bicep-pushups',
+    name: 'Bicep Push-ups',
+    category: 'upper-body',
     difficulty: 'intermediate',
-    durationInSeconds: 30,
-    imageUrl: 'dead-bug.jpg',
-    instructions: [
-      'Lie on back, arms up.',
-      'Extend opposite arm and leg.',
-      'Return to start position.',
-      'Alternate sides.'
-    ]
+    instructions: 'Similar to regular push-ups but with elbows kept tight against body and hands positioned under shoulders, focusing on bicep engagement.',
+    targetMuscles: ['biceps', 'chest', 'triceps'],
+    imageUrl: '/src/components/images/bicep-pushups.jpg'
   },
   
-  // Advanced Exercises
   {
-    id: 'burpees',
-    name: 'Burpees',
-    description: 'A high-intensity exercise that builds strength, endurance, and cardiovascular fitness.',
-    muscleGroups: ['full-body'],
-    difficulty: 'advanced',
-    durationInSeconds: 30,
-    imageUrl: 'burpees.jpg',
-    instructions: [
-      'Start in a standing position.',
-      'Drop into a squat and place your hands on the ground.',
-      'Jump your feet back into a plank position.',
-      'Perform a push-up (optional).',
-      'Jump your feet forward to return to a squat.',
-      'Explosively jump up with arms overhead.'
-    ]
+    id: 'planks',
+    name: 'Planks',
+    category: 'core',
+    difficulty: 'beginner',
+    instructions: 'Hold a forearm or high plank position with your body in a straight line from head to heels. Engage your core and hold the position.',
+    targetMuscles: ['core', 'shoulders', 'back'],
+    imageUrl: '/src/components/images/planks.jpg'
   },
   {
-    id: 'diamond-pushups',
-    name: 'Diamond Push-Ups',
-    description: 'A challenging push-up variation that targets your triceps and chest.',
-    muscleGroups: ['chest', 'arms'],
-    difficulty: 'advanced',
-    durationInSeconds: 30,
-    imageUrl: 'diamond-pushups.jpg',
-    instructions: [
-      'Start in a high plank position with hands close together, forming a diamond shape with thumbs and index fingers.',
-      'Keep your elbows close to your body.',
-      'Lower your chest toward your hands.',
-      'Push back up to the starting position.'
-    ]
+    id: 'side-plank',
+    name: 'Side Plank',
+    category: 'core',
+    difficulty: 'intermediate',
+    instructions: 'Lie on your side with legs stacked. Prop yourself up on your elbow or hand, forming a straight line from head to feet. Hold this position.',
+    targetMuscles: ['obliques', 'core', 'shoulders'],
+    imageUrl: '/src/components/images/side-plank.jpg'
   },
   {
-    id: 'one-leg-squats-assisted',
-    name: 'One-Leg Squats (Assisted)',
-    description: 'A challenging unilateral exercise that builds strength and balance in your lower body.',
-    muscleGroups: ['legs'],
-    difficulty: 'advanced',
-    durationInSeconds: 30,
-    imageUrl: 'one-leg-squats-assisted.jpg',
-    instructions: [
-      'Stand on one leg with the other leg extended forward.',
-      'Hold onto a support with one hand for balance.',
-      'Lower into a squat on your standing leg.',
-      'Push through your heel to return to standing.',
-      'Complete all reps on one side before switching.'
-    ]
+    id: 'russian-twists',
+    name: 'Russian Twists',
+    category: 'core',
+    difficulty: 'intermediate',
+    instructions: 'Sit on the floor with knees bent. Lean back slightly, keeping back straight. Twist torso from side to side, touching the floor beside you.',
+    targetMuscles: ['obliques', 'core'],
+    imageUrl: '/src/components/images/russian-twists.jpg'
   },
   {
-    id: 'decline-pushups',
-    name: 'Decline Push-Ups',
-    description: 'A push-up variation that increases the challenge by elevating your feet.',
-    muscleGroups: ['chest', 'shoulders'],
-    difficulty: 'advanced',
-    durationInSeconds: 30,
-    imageUrl: 'decline-pushups.jpg',
-    instructions: [
-      'Place your feet on an elevated surface (bench, chair, step).',
-      'Position your hands on the floor, slightly wider than shoulder-width apart.',
-      'Lower your chest toward the ground by bending your elbows.',
-      'Push back up to the starting position.'
-    ]
+    id: 'bicycle-crunches',
+    name: 'Bicycle Crunches',
+    category: 'core',
+    difficulty: 'intermediate',
+    instructions: 'Lie on your back with hands behind head. Bring opposite elbow to opposite knee, alternating sides with a pedaling motion.',
+    targetMuscles: ['abs', 'obliques'],
+    imageUrl: '/src/components/images/bicycle-crunches.jpg'
   },
   {
-    id: 'pike-pushups',
-    name: 'Pike Push-Ups',
-    description: 'A shoulder-focused exercise that mimics the movement of a handstand push-up.',
-    muscleGroups: ['shoulders', 'arms'],
-    difficulty: 'advanced',
-    durationInSeconds: 30,
-    imageUrl: 'pike-pushups.jpg',
-    instructions: [
-      'Start in a high plank position.',
-      'Walk your feet in and lift your hips high to form an inverted V shape.',
-      'Bend your elbows to lower your head toward the ground.',
-      'Push back up to the starting position.'
-    ]
+    id: 'leg-raises',
+    name: 'Leg Raises',
+    category: 'core',
+    difficulty: 'intermediate',
+    instructions: 'Lie flat on your back with legs extended. Keeping legs straight, lift them up to a 90-degree angle, then lower them without touching the ground.',
+    targetMuscles: ['lower abs', 'hip flexors'],
+    imageUrl: '/src/components/images/leg-raises.jpg'
   },
   {
-    id: 'wall-handstand-hold',
-    name: 'Wall Handstand Hold',
-    description: 'An advanced exercise for shoulder strength and balance.',
-    muscleGroups: ['shoulders', 'arms'],
-    difficulty: 'advanced',
-    durationInSeconds: 30,
-    imageUrl: 'handstand-hold.jpg',
-    instructions: [
-      'Start in plank position facing wall.',
-      'Walk feet up wall while walking hands closer.',
-      'Hold position with body aligned.',
-      'Maintain tight core and straight arms.'
-    ]
+    id: 'mountain-climbers',
+    name: 'Mountain Climbers',
+    category: 'core',
+    difficulty: 'intermediate',
+    instructions: 'Start in a high plank position. Alternate bringing each knee toward your chest in a running motion while maintaining a stable upper body.',
+    targetMuscles: ['core', 'shoulders', 'hip flexors'],
+    imageUrl: '/src/components/images/mountain-climbers.jpg'
   },
   {
-    id: 'tuck-jumps',
-    name: 'Tuck Jumps',
-    description: 'A plyometric exercise that builds explosive power and coordination.',
-    muscleGroups: ['legs'],
-    difficulty: 'advanced',
-    durationInSeconds: 30,
-    imageUrl: 'tuck-jumps.jpg',
-    instructions: [
-      'Stand with feet shoulder-width apart.',
-      'Jump explosively upward.',
-      'Tuck knees to chest mid-air.',
-      'Land softly and immediately repeat.'
-    ]
-  },
-  {
-    id: 'plank-to-pushup',
-    name: 'Plank to Push-Up',
-    description: 'A challenging combination movement for full upper body.',
-    muscleGroups: ['chest', 'arms', 'shoulders'],
-    difficulty: 'advanced',
-    durationInSeconds: 30,
-    imageUrl: 'plank-pushup.jpg',
-    instructions: [
-      'Start in forearm plank position.',
-      'Push up to hand plank one arm at a time.',
-      'Lower back to forearm plank one arm at a time.',
-      'Alternate leading arms.'
-    ]
+    id: 'flutter-kicks',
+    name: 'Flutter Kicks',
+    category: 'core',
+    difficulty: 'intermediate',
+    instructions: 'Lie on your back with legs extended and slightly lifted. Kick legs up and down in a fluttering motion without touching the ground.',
+    targetMuscles: ['lower abs', 'hip flexors'],
+    imageUrl: '/src/components/images/flutter-kicks.jpg'
   },
   {
     id: 'v-ups',
-    name: 'V-Ups',
-    description: 'An advanced core exercise that targets both upper and lower abs.',
-    muscleGroups: ['abs'],
+    name: 'V-ups',
+    category: 'core',
     difficulty: 'advanced',
-    durationInSeconds: 30,
-    imageUrl: 'v-ups.jpg',
-    instructions: [
-      'Lie on back with arms extended overhead.',
-      'Lift legs and upper body simultaneously.',
-      'Touch hands to feet at the top.',
-      'Lower back down with control.'
-    ]
+    instructions: 'Lie on your back with arms extended overhead and legs straight. Simultaneously lift upper body and legs, forming a V-shape, reaching hands toward toes.',
+    targetMuscles: ['abs', 'hip flexors'],
+    imageUrl: '/src/components/images/v-ups.jpg'
+  },
+  {
+    id: 'toe-touches',
+    name: 'Lying Toe Touches',
+    category: 'core',
+    difficulty: 'beginner',
+    instructions: 'Lie on your back with legs straight up at a 90-degree angle. Reach hands up to touch toes, lifting shoulders off the ground.',
+    targetMuscles: ['abs', 'shoulders'],
+    imageUrl: '/src/components/images/toe-touches.jpg'
+  },
+  {
+    id: 'superman-holds',
+    name: 'Superman Holds',
+    category: 'core',
+    difficulty: 'beginner',
+    instructions: 'Lie face down with arms extended overhead. Simultaneously lift arms, chest, and legs off the ground, hold, and lower.',
+    targetMuscles: ['lower back', 'glutes', 'shoulders'],
+    imageUrl: '/src/components/images/superman-holds.jpg'
+  },
+  
+  {
+    id: 'squats',
+    name: 'Squats',
+    category: 'lower-body',
+    difficulty: 'beginner',
+    instructions: 'Stand with feet shoulder-width apart. Lower your body by bending knees and pushing hips back, as if sitting in a chair. Return to standing.',
+    targetMuscles: ['quadriceps', 'glutes', 'hamstrings'],
+    imageUrl: '/src/components/images/squats.jpg'
+  },
+  {
+    id: 'lunges',
+    name: 'Lunges',
+    category: 'lower-body',
+    difficulty: 'intermediate',
+    instructions: 'Step forward with one leg and lower your body until both knees are bent at 90-degree angles. Push back to starting position and alternate legs.',
+    targetMuscles: ['quadriceps', 'glutes', 'hamstrings'],
+    imageUrl: '/src/components/images/lunges.jpg'
+  },
+  {
+    id: 'bulgarian-split-squats',
+    name: 'Bulgarian Split Squats',
+    category: 'lower-body',
+    difficulty: 'advanced',
+    instructions: 'Place one foot on a bench behind you. Lower your body until your front thigh is parallel to the ground, then push back up.',
+    targetMuscles: ['quadriceps', 'glutes', 'hamstrings'],
+    imageUrl: '/src/components/images/bulgarian-split-squats.jpg'
+  },
+  {
+    id: 'step-ups',
+    name: 'Step-ups',
+    category: 'lower-body',
+    difficulty: 'intermediate',
+    instructions: 'Stand in front of a bench or step. Step up with one foot, bringing the other foot up, then step back down. Alternate legs.',
+    targetMuscles: ['quadriceps', 'glutes', 'calves'],
+    imageUrl: '/src/components/images/step-ups.jpg'
+  },
+  {
+    id: 'glute-bridges',
+    name: 'Glute Bridges',
+    category: 'lower-body',
+    difficulty: 'beginner',
+    instructions: 'Lie on your back with knees bent and feet flat on the floor. Lift hips toward ceiling by squeezing glutes, then lower back down.',
+    targetMuscles: ['glutes', 'hamstrings', 'lower back'],
+    imageUrl: '/src/components/images/glute-bridges.jpg'
+  },
+  {
+    id: 'single-leg-glute-bridges',
+    name: 'Single-Leg Glute Bridges',
+    category: 'lower-body',
+    difficulty: 'intermediate',
+    instructions: 'Similar to regular glute bridges, but with one leg extended straight. Lift hips by pushing through the planted foot.',
+    targetMuscles: ['glutes', 'hamstrings', 'core'],
+    imageUrl: '/src/components/images/single-leg-glute-bridges.jpg'
+  },
+  {
+    id: 'curtsy-lunges',
+    name: 'Curtsy Lunges',
+    category: 'lower-body',
+    difficulty: 'intermediate',
+    instructions: 'Step one foot behind and across your body, bending both knees as if curtseying. Return to standing and alternate sides.',
+    targetMuscles: ['glutes', 'quadriceps', 'inner thighs'],
+    imageUrl: '/src/components/images/curtsy-lunges.jpg'
+  },
+  {
+    id: 'sumo-squats',
+    name: 'Sumo Squats',
+    category: 'lower-body',
+    difficulty: 'intermediate',
+    instructions: 'Stand with feet wider than shoulder-width and toes pointed outward. Lower into a squat position, keeping chest up and knees tracking over toes.',
+    targetMuscles: ['inner thighs', 'glutes', 'quadriceps'],
+    imageUrl: '/src/components/images/sumo-squats.jpg'
+  },
+  {
+    id: 'jump-squats',
+    name: 'Jump Squats',
+    category: 'lower-body',
+    difficulty: 'intermediate',
+    instructions: 'Perform a squat, then explosively jump upward. Land softly and immediately lower into the next squat.',
+    targetMuscles: ['quadriceps', 'glutes', 'calves'],
+    imageUrl: '/src/components/images/jump-squats.jpg'
+  },
+  {
+    id: 'wall-sit',
+    name: 'Wall Sit',
+    category: 'lower-body',
+    difficulty: 'beginner',
+    instructions: 'Lean against a wall with feet shoulder-width apart. Slide down until thighs are parallel to the ground, forming a 90-degree angle. Hold this position.',
+    targetMuscles: ['quadriceps', 'glutes', 'calves'],
+    imageUrl: '/src/components/images/wall-sit.jpg'
+  },
+  
+  {
+    id: 'burpees',
+    name: 'Burpees',
+    category: 'full-body',
+    difficulty: 'advanced',
+    instructions: 'Begin standing, then squat down, kick feet back into a plank, perform a push-up, jump feet forward, and explosively jump up with arms overhead.',
+    targetMuscles: ['full body'],
+    imageUrl: '/src/components/images/burpees.jpg'
+  },
+  {
+    id: 'jumping-jacks',
+    name: 'Jumping Jacks',
+    category: 'full-body',
+    difficulty: 'beginner',
+    instructions: 'Start standing with arms at sides. Jump feet out wide while raising arms overhead, then jump back to starting position.',
+    targetMuscles: ['shoulders', 'calves', 'hip abductors'],
+    imageUrl: '/src/components/images/jumping-jacks.jpg'
+  },
+  {
+    id: 'high-knees',
+    name: 'High Knees',
+    category: 'full-body',
+    difficulty: 'intermediate',
+    instructions: 'Run in place, lifting knees as high as possible toward chest. Maintain a quick pace while pumping arms.',
+    targetMuscles: ['hip flexors', 'quads', 'calves', 'core'],
+    imageUrl: '/src/components/images/high-knees.jpg'
+  },
+  {
+    id: 'butt-kicks',
+    name: 'Butt Kicks',
+    category: 'full-body',
+    difficulty: 'beginner',
+    instructions: 'Run in place, kicking heels up toward buttocks with each step. Maintain a quick pace while keeping upper body stable.',
+    targetMuscles: ['hamstrings', 'glutes', 'calves'],
+    imageUrl: '/src/components/images/butt-kicks.jpg'
+  },
+  {
+    id: 'mountain-climbers-cardio',
+    name: 'Mountain Climbers',
+    category: 'full-body',
+    difficulty: 'intermediate',
+    instructions: 'Start in a high plank position. Alternate bringing each knee toward your chest in a running motion while maintaining a stable upper body.',
+    targetMuscles: ['core', 'shoulders', 'hip flexors', 'quads'],
+    imageUrl: '/src/components/images/mountain-climbers-cardio.jpg'
+  },
+  {
+    id: 'skater-jumps',
+    name: 'Skater Jumps',
+    category: 'full-body',
+    difficulty: 'intermediate',
+    instructions: 'Jump laterally from one foot to the other, mimicking a speed skater. Land softly on the outside foot and swing arms across body.',
+    targetMuscles: ['glutes', 'quads', 'calves', 'core'],
+    imageUrl: '/src/components/images/skater-jumps.jpg'
   },
   {
     id: 'plank-jacks',
     name: 'Plank Jacks',
-    description: 'Combines plank stability with cardio movement.',
-    muscleGroups: ['full-body'],
-    difficulty: 'advanced',
-    durationInSeconds: 30,
-    imageUrl: 'plank-jacks.jpg',
-    instructions: [
-      'Start in high plank position.',
-      'Jump feet out wide.',
-      'Jump feet back together.',
-      'Maintain plank position throughout.'
-    ]
+    category: 'full-body',
+    difficulty: 'intermediate',
+    instructions: 'Start in a high plank position. Jump feet out wide and then back together, similar to a jumping jack motion.',
+    targetMuscles: ['core', 'shoulders', 'chest', 'legs'],
+    imageUrl: '/src/components/images/plank-jacks.jpg'
   },
   {
-    id: 'jumping-knee-tucks',
-    name: 'Jumping Knee Tucks',
-    description: 'A dynamic exercise that builds explosive power and core strength.',
-    muscleGroups: ['legs', 'abs'],
-    difficulty: 'advanced',
-    durationInSeconds: 30,
-    imageUrl: 'knee-tucks.jpg',
-    instructions: [
-      'Stand with feet shoulder-width apart.',
-      'Jump up bringing knees to chest.',
-      'Land softly and immediately repeat.',
-      'Keep core engaged throughout.'
-    ]
+    id: 'broad-jumps',
+    name: 'Broad Jumps',
+    category: 'full-body',
+    difficulty: 'intermediate',
+    instructions: 'Stand with feet hip-width apart. Swing arms back, then forward as you jump horizontally as far as possible. Land softly and repeat.',
+    targetMuscles: ['glutes', 'quads', 'calves', 'core'],
+    imageUrl: '/src/components/images/broad-jumps.jpg'
   },
   {
-    id: 'side-to-side-pushups',
-    name: 'Side-to-Side Push-Ups',
-    description: 'A push-up variation that adds lateral movement.',
-    muscleGroups: ['chest', 'shoulders', 'arms'],
-    difficulty: 'advanced',
-    durationInSeconds: 30,
-    imageUrl: 'side-pushups.jpg',
-    instructions: [
-      'Start in push-up position.',
-      'Lower chest toward ground.',
-      'Push up and shift body sideways.',
-      'Continue alternating sides.'
-    ]
+    id: 'bear-crawls',
+    name: 'Bear Crawls',
+    category: 'full-body',
+    difficulty: 'intermediate',
+    instructions: 'Start on hands and knees with knees hovering just above the ground. Move forward by simultaneously moving opposite hand and foot.',
+    targetMuscles: ['shoulders', 'core', 'quadriceps', 'triceps'],
+    imageUrl: '/src/components/images/bear-crawls.jpg'
   },
   {
-    id: 'squat-pulses',
-    name: 'Squat Pulses',
-    description: 'Intensifies the squat by maintaining tension in the legs.',
-    muscleGroups: ['legs'],
-    difficulty: 'advanced',
-    durationInSeconds: 30,
-    imageUrl: 'squat-pulses.jpg',
-    instructions: [
-      'Lower into squat position.',
-      'Pulse up and down slightly.',
-      'Maintain tension throughout.',
-      'Keep weight in heels.'
-    ]
+    id: 'crab-walks',
+    name: 'Crab Walks',
+    category: 'full-body',
+    difficulty: 'beginner',
+    instructions: 'Sit on the floor, place hands behind you with fingers pointing toward feet. Lift hips and walk backward using hands and feet.',
+    targetMuscles: ['triceps', 'shoulders', 'core', 'glutes'],
+    imageUrl: '/src/components/images/crab-walks.jpg'
+  },
+  
+  {
+    id: 'cat-cow',
+    name: 'Cat-Cow Stretch',
+    category: 'mobility',
+    difficulty: 'beginner',
+    instructions: 'Start on hands and knees. Alternate between arching back upward (cat) and letting it sag while lifting head (cow).',
+    targetMuscles: ['spine', 'neck', 'core'],
+    imageUrl: '/src/components/images/cat-cow.jpg'
   },
   {
-    id: 'elevated-glute-bridge',
-    name: 'Elevated Glute Bridge',
-    description: 'An advanced variation of the glute bridge using elevation.',
-    muscleGroups: ['legs'],
-    difficulty: 'advanced',
-    durationInSeconds: 30,
-    imageUrl: 'elevated-bridge.jpg',
-    instructions: [
-      'Place feet on elevated surface.',
-      'Lift hips toward ceiling.',
-      'Squeeze glutes at top.',
-      'Lower with control.'
-    ]
+    id: 'downdog-cobra',
+    name: 'Downward Dog to Cobra',
+    category: 'mobility',
+    difficulty: 'beginner',
+    instructions: 'Flow between downward dog position (inverted V) and cobra pose (lying face down, lifting chest with arms).',
+    targetMuscles: ['shoulders', 'hamstrings', 'chest', 'spine'],
+    imageUrl: '/src/components/images/downdog-cobra.jpg'
   },
   {
-    id: 'hollow-body-hold',
-    name: 'Hollow Body Hold',
-    description: 'An advanced core exercise for total ab strength.',
-    muscleGroups: ['abs'],
-    difficulty: 'advanced',
-    durationInSeconds: 30,
-    imageUrl: 'hollow-body.jpg',
-    instructions: [
-      'Lie on back, arms extended overhead.',
-      'Lift shoulders and legs off ground.',
-      'Create a dish shape with body.',
-      'Hold position while maintaining lower back contact.'
-    ]
+    id: 'hip-circles',
+    name: 'Hip Circles',
+    category: 'mobility',
+    difficulty: 'beginner',
+    instructions: 'Stand with feet hip-width apart. Place hands on hips and make circular motions with hips in both directions.',
+    targetMuscles: ['hip flexors', 'lower back'],
+    imageUrl: '/src/components/images/hip-circles.jpg'
+  },
+  {
+    id: 'lunge-twist',
+    name: 'Lunge with Twist',
+    category: 'mobility',
+    difficulty: 'beginner',
+    instructions: 'Step into a lunge position. Rotate your torso toward the front leg side, then switch sides.',
+    targetMuscles: ['hip flexors', 'obliques', 'quadriceps'],
+    imageUrl: '/src/components/images/lunge-twist.jpg'
+  },
+  {
+    id: 'standing-toe-touches',
+    name: 'Standing Toe Touches',
+    category: 'mobility',
+    difficulty: 'beginner',
+    instructions: 'Stand with feet hip-width apart. Bend at the waist and reach for your toes, keeping legs straight or slightly bent.',
+    targetMuscles: ['hamstrings', 'lower back'],
+    imageUrl: '/src/components/images/standing-toe-touches.jpg'
+  },
+  {
+    id: 'seated-forward-fold',
+    name: 'Seated Forward Fold',
+    category: 'mobility',
+    difficulty: 'beginner',
+    instructions: 'Sit with legs extended straight in front. Hinge at hips and reach for toes, keeping back straight.',
+    targetMuscles: ['hamstrings', 'lower back'],
+    imageUrl: '/src/components/images/seated-forward-fold.jpg'
+  },
+  {
+    id: 'childs-pose',
+    name: 'Child\'s Pose',
+    category: 'mobility',
+    difficulty: 'beginner',
+    instructions: 'Kneel on the floor, then sit back on heels. Extend arms forward and lower torso to the ground, resting forehead on mat.',
+    targetMuscles: ['lower back', 'shoulders', 'hips'],
+    imageUrl: '/src/components/images/childs-pose.jpg'
+  },
+  {
+    id: 'thread-the-needle',
+    name: 'Thread the Needle',
+    category: 'mobility',
+    difficulty: 'beginner',
+    instructions: 'Start on hands and knees. Thread one arm under and across body, reaching toward opposite side. Rotate chest toward the ground.',
+    targetMuscles: ['shoulders', 'upper back', 'spine'],
+    imageUrl: '/src/components/images/thread-the-needle.jpg'
+  },
+  {
+    id: 'leg-swings',
+    name: 'Leg Swings',
+    category: 'mobility',
+    difficulty: 'beginner',
+    instructions: 'Hold onto a wall or support. Swing one leg forward and backward in a controlled motion. Switch sides.',
+    targetMuscles: ['hip flexors', 'hamstrings'],
+    imageUrl: '/src/components/images/leg-swings.jpg'
+  },
+  {
+    id: 'ankle-bounces',
+    name: 'Ankle Bounces',
+    category: 'mobility',
+    difficulty: 'beginner',
+    instructions: 'Stand with feet hip-width apart. Rise onto balls of feet and bounce gently up and down to activate calves.',
+    targetMuscles: ['calves', 'ankles'],
+    imageUrl: '/src/components/images/ankle-bounces.jpg'
   }
 ];
 
-// Helper functions to filter exercises
-export const getExercisesByDifficulty = (difficulty: string) => {
-  return exercises.filter(exercise => exercise.difficulty === difficulty);
-};
-
-export const getExercisesByMuscleGroup = (muscleGroup: string) => {
-  return exercises.filter(exercise => exercise.muscleGroups.includes(muscleGroup as any));
+export const getExercisesByCategory = (category: Exercise['category']) => {
+  return exercises.filter(exercise => exercise.category === category);
 };
 
 export const getExerciseById = (id: string) => {
   return exercises.find(exercise => exercise.id === id);
 };
 
-export const beginnerExercises = getExercisesByDifficulty('beginner');
-export const intermediateExercises = getExercisesByDifficulty('intermediate');
-export const advancedExercises = getExercisesByDifficulty('advanced');
+export const searchExercises = (query: string) => {
+  const lowercaseQuery = query.toLowerCase();
+  return exercises.filter(
+    exercise => 
+      exercise.name.toLowerCase().includes(lowercaseQuery) ||
+      exercise.instructions.toLowerCase().includes(lowercaseQuery) ||
+      exercise.targetMuscles.some(muscle => muscle.toLowerCase().includes(lowercaseQuery))
+  );
+};
+
+export const filterExercisesByDifficulty = (difficulty: Exercise['difficulty']) => {
+  return exercises.filter(exercise => exercise.difficulty === difficulty);
+};
+
+export const filterExercises = (
+  category?: Exercise['category'],
+  difficulty?: Exercise['difficulty'],
+  query?: string
+) => {
+  let filtered = [...exercises];
+  
+  if (category) {
+    filtered = filtered.filter(exercise => exercise.category === category);
+  }
+  
+  if (difficulty) {
+    filtered = filtered.filter(exercise => exercise.difficulty === difficulty);
+  }
+  
+  if (query) {
+    const lowercaseQuery = query.toLowerCase();
+    filtered = filtered.filter(
+      exercise => 
+        exercise.name.toLowerCase().includes(lowercaseQuery) ||
+        exercise.instructions.toLowerCase().includes(lowercaseQuery) ||
+        exercise.targetMuscles.some(muscle => muscle.toLowerCase().includes(lowercaseQuery))
+    );
+  }
+  
+  return filtered;
+};

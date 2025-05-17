@@ -8,7 +8,7 @@ export interface Workout {
   description: string;
   exercises: ExerciseSet[];
   difficulty: DifficultyLevel;
-  duration: number; // in minutes
+  duration: number; 
   targetMuscleGroups: MuscleGroup[];
   targetAgeGroup: AgeGroup[];
   goals: FitnessGoal[];
@@ -24,11 +24,11 @@ export interface WorkoutLog {
   userId: string;
   date: Date;
   exercises: CompletedExerciseSet[];
-  duration: number; // actual duration in minutes
+  duration: number; 
   feedback?: {
-    energyLevel?: number; // 1-5
-    difficulty?: number; // 1-5
-    enjoyment?: number; // 1-5
+    energyLevel?: number; 
+    difficulty?: number; 
+    enjoyment?: number; 
     notes?: string;
   };
   completed: boolean;
@@ -54,7 +54,7 @@ export interface WorkoutStats {
   };
   currentStreak: number;
   longestStreak: number;
-  workoutsByWeekday: number[]; // [Sunday, Monday, ..., Saturday]
+  workoutsByWeekday: number[]; 
 }
 
 export interface DailyChallenge {
@@ -78,7 +78,7 @@ export interface FriendWorkout {
   description: string;
   workout: Workout;
   scheduledDate?: Date;
-  participants: string[]; // array of user IDs
+  participants: string[]; 
   isLive: boolean;
   status: 'scheduled' | 'active' | 'completed';
   results?: {

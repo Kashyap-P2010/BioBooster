@@ -1,7 +1,7 @@
 {
-  "name": "vite-react-typescript-starter",
+  "name": "biobooster-fitness-app",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,10 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "framer-motion": "^11.0.5",
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.22.0"
+    "react-router-dom": "^6.22.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",
@@ -30,18 +31,5 @@
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.3.0",
     "vite": "^5.4.2"
-  },
-  "description": "",
-  "main": "eslint.config.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Kashyap-P2010/BioBooster.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Kashyap-P2010/BioBooster/issues"
-  },
-  "homepage": "https://github.com/Kashyap-P2010/BioBooster#readme"
+  }
 }

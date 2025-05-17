@@ -32,7 +32,7 @@ const Workouts = () => {
   };
   
   const handleCompleteWorkout = () => {
-    // Here you would typically save the workout progress
+    
     setIsInSession(false);
     setWorkout(null);
   };
@@ -66,7 +66,7 @@ const Workouts = () => {
           </p>
         </div>
         
-        {/* Tab Navigation */}
+       
         <div className="flex space-x-4 mb-8">
           <Button
             variant={activeTab === 'preset' ? 'primary' : 'outline'}
@@ -86,16 +86,16 @@ const Workouts = () => {
           </Button>
         </div>
         
-        {/* Content */}
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {activeTab === 'generate' ? (
             <>
-              {/* Generator Form */}
+     
               <div className="lg:col-span-4">
                 <WorkoutGenerator onGenerateWorkout={handleGenerateWorkout} />
               </div>
               
-              {/* Workout Result */}
+     
               <div className="lg:col-span-8" id="workout-result">
                 {workout ? (
                   <div className="animate-fade-in">
@@ -115,7 +115,7 @@ const Workouts = () => {
                         </div>
                       </div>
                       
-                      {/* Tags */}
+           
                       <div className="flex flex-wrap gap-2 mb-6">
                         {workout.targetMuscleGroups.map(group => (
                           <span 
@@ -142,7 +142,7 @@ const Workouts = () => {
                         <Play className="h-5 w-5 mr-2" /> Start Workout
                       </Button>
                       
-                      {/* Exercises */}
+      
                       <div>
                         <h3 className="font-semibold mb-4">Exercises</h3>
                         <div className="space-y-4">

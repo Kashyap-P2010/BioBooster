@@ -34,13 +34,13 @@ const Header = () => {
     <header className={headerClasses}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
+          {}
           <div className="flex items-center">
             <Dumbbell className={`h-8 w-8 ${theme === 'dark' ? 'text-blue-400' : 'text-blue-600'}`} />
             <span className="ml-2 text-xl font-bold">FitLife</span>
           </div>
           
-          {/* Desktop Navigation */}
+          {}
           <nav className="hidden md:block">
             <ul className="flex space-x-8">
               {navLinks.map((link) => (
@@ -61,9 +61,9 @@ const Header = () => {
             </ul>
           </nav>
           
-          {/* Actions */}
+          {}
           <div className="flex items-center">
-            {/* Theme Toggle */}
+            {}
             <button 
               onClick={toggleTheme}
               className={`
@@ -77,7 +77,7 @@ const Header = () => {
               {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </button>
             
-            {/* Mobile Menu Toggle */}
+            {}
             <button 
               className="ml-4 md:hidden"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -89,7 +89,7 @@ const Header = () => {
         </div>
       </div>
       
-      {/* Mobile Navigation */}
+      {}
       {isMenuOpen && (
         <div className={`md:hidden ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'}`}>
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">

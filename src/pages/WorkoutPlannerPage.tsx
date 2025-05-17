@@ -39,7 +39,6 @@ const WorkoutPlannerPage: React.FC = () => {
   const [showExerciseDetail, setShowExerciseDetail] = useState<string | null>(null);
   const [showCompletionModal, setShowCompletionModal] = useState(false);
 
-  // Parse workout ID from URL
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const workoutId = params.get('workout');
@@ -48,7 +47,7 @@ const WorkoutPlannerPage: React.FC = () => {
       const workout = getWorkoutById(workoutId);
       if (workout) {
         setSelectedWorkout(workout);
-        // Initialize completed exercises
+       
         setCompletedExercises(
           workout.exercises.map(exercise => ({
             ...exercise,
@@ -61,7 +60,7 @@ const WorkoutPlannerPage: React.FC = () => {
     }
   }, [location, getWorkoutById]);
 
-  // Timer functionality
+
   useEffect(() => {
     let interval: NodeJS.Timeout;
     
@@ -112,23 +111,23 @@ const WorkoutPlannerPage: React.FC = () => {
   const handleCompleteWorkout = () => {
     if (!selectedWorkout || !currentUser) return;
 
-    // Check if all exercises are completed
+
     const allCompleted = completedExercises.every(exercise => exercise.completed);
     
     if (!allCompleted) {
-      // Ask user to confirm if they want to complete with incomplete exercises
+
       if (!window.confirm('Some exercises are not marked as completed. Do you still want to finish the workout?')) {
         return;
       }
     }
 
     const workoutLog: WorkoutLog = {
-      id: '', // Will be set in completeWorkout
+      id: '', 
       workoutId: selectedWorkout.id,
       userId: currentUser.id,
       date: new Date(),
       exercises: completedExercises,
-      duration: Math.floor(timer / 60), // Convert seconds to minutes
+      duration: Math.floor(timer / 60), 
       feedback: {
         energyLevel: feedback.energyLevel,
         difficulty: feedback.difficulty,
@@ -162,7 +161,7 @@ const WorkoutPlannerPage: React.FC = () => {
     return exercises.find(e => e.id === exerciseId);
   };
 
-  // If no workout is selected, show the selection screen
+
   if (!selectedWorkout) {
     return (
       <div className="min-h-screen bg-gray-50 py-10">
@@ -182,7 +181,7 @@ const WorkoutPlannerPage: React.FC = () => {
                 className="workout-card cursor-pointer"
                 onClick={() => {
                   setSelectedWorkout(workout);
-                  // Initialize completed exercises
+        
                   setCompletedExercises(
                     workout.exercises.map(exercise => ({
                       ...exercise,
@@ -350,7 +349,7 @@ const WorkoutPlannerPage: React.FC = () => {
                         </div>
                       </div>
                       
-                      {/* Exercise Details Panel */}
+                   
                       {exercise.exerciseId === showExerciseDetail && (
                         <div className="border-t border-gray-200 p-3 bg-gray-50">
                           <div className="mb-3">
@@ -363,7 +362,7 @@ const WorkoutPlannerPage: React.FC = () => {
                           <div>
                             <h4 className="font-medium text-sm text-gray-700 mb-2">Track Your Progress</h4>
                             <div className="flex flex-col sm:flex-row gap-3">
-                              {/* Sets/Reps Input */}
+                              
                               {exercise.reps > 0 && (
                                 <div>
                                   <label className="block text-xs text-gray-600 mb-1">Actual Reps</label>
@@ -377,7 +376,7 @@ const WorkoutPlannerPage: React.FC = () => {
                                 </div>
                               )}
                               
-                              {/* Duration Input */}
+                   
                               {exercise.duration && (
                                 <div>
                                   <label className="block text-xs text-gray-600 mb-1">Actual Duration (s)</label>
@@ -423,7 +422,7 @@ const WorkoutPlannerPage: React.FC = () => {
           </div>
         )}
 
-        {/* Workout Completion Modal */}
+  
         {showCompletionModal && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
             <motion.div

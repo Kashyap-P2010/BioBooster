@@ -42,15 +42,15 @@ const WorkoutGenerator = ({ onGenerateWorkout }: WorkoutGeneratorProps) => {
   
   const handleMuscleGroupChange = (muscleGroup: MuscleGroup) => {
     setPreferences(prev => {
-      // If full-body is selected, clear other selections
+      
       if (muscleGroup === 'full-body') {
         return { ...prev, targetMuscleGroups: ['full-body'] };
       }
       
-      // If another group is selected, remove full-body
+      
       const updatedGroups = prev.targetMuscleGroups.filter(g => g !== 'full-body');
       
-      // Toggle the selected group
+      
       if (updatedGroups.includes(muscleGroup)) {
         return { 
           ...prev, 
@@ -93,7 +93,7 @@ const WorkoutGenerator = ({ onGenerateWorkout }: WorkoutGeneratorProps) => {
     <Card className="p-6">
       <h2 className="text-2xl font-bold mb-6">Customize Your Workout</h2>
       
-      {/* Duration Section */}
+    
       <div className="mb-6">
         <OptionLabel icon={<Clock className="h-4 w-4" />} text="Workout Duration" />
         <div className="flex flex-wrap">
@@ -112,7 +112,6 @@ const WorkoutGenerator = ({ onGenerateWorkout }: WorkoutGeneratorProps) => {
         </div>
       </div>
       
-      {/* Difficulty Section */}
       <div className="mb-6">
         <OptionLabel icon={<BarChart2 className="h-4 w-4" />} text="Difficulty Level" />
         <div className="flex flex-wrap">
@@ -131,7 +130,7 @@ const WorkoutGenerator = ({ onGenerateWorkout }: WorkoutGeneratorProps) => {
         </div>
       </div>
       
-      {/* Age Group Section */}
+ 
       <div className="mb-6">
         <OptionLabel icon={<Users className="h-4 w-4" />} text="Age Group" />
         <div className="flex flex-wrap">
@@ -149,8 +148,7 @@ const WorkoutGenerator = ({ onGenerateWorkout }: WorkoutGeneratorProps) => {
           ))}
         </div>
       </div>
-      
-      {/* Muscle Group Section */}
+
       <div className="mb-8">
         <OptionLabel icon={<BarChart2 className="h-4 w-4" />} text="Target Area" />
         <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
@@ -172,7 +170,7 @@ const WorkoutGenerator = ({ onGenerateWorkout }: WorkoutGeneratorProps) => {
         </div>
       </div>
       
-      {/* Generate Button */}
+ 
       <Button 
         variant="primary" 
         size="lg" 

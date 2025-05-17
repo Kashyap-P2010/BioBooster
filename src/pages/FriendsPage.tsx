@@ -24,7 +24,7 @@ const FriendsPage: React.FC = () => {
   const [selectedFriends, setSelectedFriends] = useState<string[]>([]);
   const [showJoinConfirmation, setShowJoinConfirmation] = useState<string | null>(null);
 
-  // Load all users from local storage
+  
   useEffect(() => {
     const storedUsers = localStorage.getItem('biobooster_users');
     if (storedUsers) {
@@ -95,7 +95,7 @@ const FriendsPage: React.FC = () => {
     return user ? user.username : 'Unknown User';
   };
 
-  // Filter workouts: active/upcoming workouts the user is part of, and other available workouts
+  
   const userWorkouts = friendWorkouts.filter(
     workout => workout.participants.includes(currentUser?.id || '')
   );
@@ -117,7 +117,7 @@ const FriendsPage: React.FC = () => {
           </p>
         </div>
 
-        {/* Action Buttons */}
+        {}
         <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
           <button 
             onClick={() => setShowCreateWorkout(true)}
@@ -128,7 +128,7 @@ const FriendsPage: React.FC = () => {
           </button>
         </div>
 
-        {/* Create Group Workout Form */}
+        {}
         {showCreateWorkout && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
             <motion.div
@@ -264,7 +264,7 @@ const FriendsPage: React.FC = () => {
           </div>
         )}
 
-        {/* Join Confirmation Modal */}
+        {}
         {showJoinConfirmation && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
             <motion.div
@@ -296,7 +296,7 @@ const FriendsPage: React.FC = () => {
           </div>
         )}
 
-        {/* Your Group Workouts */}
+        {}
         <section className="mb-10">
           <h2 className="text-xl font-bold mb-4 text-gray-800">Your Group Workouts</h2>
           
@@ -379,7 +379,7 @@ const FriendsPage: React.FC = () => {
           )}
         </section>
 
-        {/* Available Group Workouts */}
+        {}
         {otherWorkouts.length > 0 && (
           <section>
             <h2 className="text-xl font-bold mb-4 text-gray-800">Available Group Workouts</h2>

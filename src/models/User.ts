@@ -1,13 +1,13 @@
 export interface User {
   id: string;
   username: string;
-  password: string; // In a real app, this would be hashed
+  password: string; 
   age: number;
   createdAt: Date;
   lastLogin?: Date;
   streak: number;
   completedWorkouts: number;
-  friends: string[]; // Array of user IDs
+  friends: string[]; 
   settings: UserSettings;
 }
 
@@ -15,8 +15,8 @@ export interface UserSettings {
   fitnessLevel: FitnessLevel;
   fitnessGoals: FitnessGoal[];
   workoutReminders: boolean;
-  workoutDays: number[]; // 0 = Sunday, 1 = Monday, etc.
-  preferredWorkoutDuration: number; // in minutes
+  workoutDays: number[]; 
+  preferredWorkoutDuration: number; 
 }
 
 export enum FitnessLevel {
@@ -34,9 +34,9 @@ export enum FitnessGoal {
 }
 
 export enum AgeGroup {
-  Teen = 'teen', // 13-17
-  Adult = 'adult', // 18-45
-  Senior = 'senior' // 46+
+  Teen = 'teen', 
+  Adult = 'adult', 
+  Senior = 'senior' 
 }
 
 export const getAgeGroup = (age: number): AgeGroup => {
@@ -52,11 +52,11 @@ export const getDefaultSettingsForAge = (age: number): UserSettings => {
     fitnessLevel: FitnessLevel.Beginner,
     fitnessGoals: [FitnessGoal.BuildStrength],
     workoutReminders: true,
-    workoutDays: [1, 3, 5], // Monday, Wednesday, Friday
-    preferredWorkoutDuration: 30, // 30 minutes
+    workoutDays: [1, 3, 5], 
+    preferredWorkoutDuration: 30, 
   };
 
-  // Customize based on age group
+  
   if (ageGroup === AgeGroup.Teen) {
     defaultSettings.fitnessGoals = [FitnessGoal.BuildStrength, FitnessGoal.ImproveCardio];
     defaultSettings.preferredWorkoutDuration = 25;

@@ -24,7 +24,7 @@ const ExerciseCard = ({ exercise, onClick }: ExerciseCardProps) => {
       className="h-full flex flex-col transform transition-transform duration-300 hover:scale-105"
     >
       <div className="relative h-48 overflow-hidden rounded-t-lg">
-        {/* TODO: Replace with real images later */}
+        {/* todoo: replace with the actual imgs */}
         <img 
           src={`https://images.pexels.com/photos/4162456/pexels-photo-4162456.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop`}
           alt={exercise.name}

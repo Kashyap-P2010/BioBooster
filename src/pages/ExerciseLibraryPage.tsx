@@ -365,6 +365,4 @@ const ExerciseLibraryPage: React.FC = () => {
 };
 
 export default ExerciseLibraryPage;
-/* 
 
-*/

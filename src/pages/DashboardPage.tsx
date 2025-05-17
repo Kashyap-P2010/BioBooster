@@ -27,14 +27,14 @@ const DashboardPage: React.FC = () => {
   const dashboardRef = useRef<HTMLDivElement>(null);
   const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
 
-  // Animation for dashboard sections
+  
   useEffect(() => {
     if (!dashboardRef.current) return;
 
-    // Add dashboard entry animation class
+    
     dashboardRef.current.classList.add('dashboard-enter-active');
 
-    // Animate sections one by one
+    
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -79,7 +79,7 @@ const DashboardPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50 py-10" ref={dashboardRef}>
       <div className="container-custom">
-        {/* Welcome Section */}
+        {}
         <div 
           className="dashboard-section mb-8" 
           ref={el => (sectionsRef.current[0] = el)}
@@ -109,7 +109,7 @@ const DashboardPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Quick Stats */}
+        {}
         <div 
           className="dashboard-section mb-8" 
           ref={el => (sectionsRef.current[1] = el)}
@@ -161,7 +161,7 @@ const DashboardPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Today's Recommendation */}
+        {}
         <div 
           className="dashboard-section mb-8" 
           ref={el => (sectionsRef.current[2] = el)}
@@ -224,9 +224,9 @@ const DashboardPage: React.FC = () => {
           )}
         </div>
 
-        {/* Two-Column Layout for Challenges and Friends */}
+        {}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Daily Challenge */}
+          {}
           <div 
             className="dashboard-section" 
             ref={el => (sectionsRef.current[3] = el)}
@@ -270,7 +270,7 @@ const DashboardPage: React.FC = () => {
             )}
           </div>
 
-          {/* Workout With Friends */}
+          {}
           <div 
             className="dashboard-section" 
             ref={el => (sectionsRef.current[4] = el)}

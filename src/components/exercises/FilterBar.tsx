@@ -41,7 +41,7 @@ const FilterBar = ({
   
   return (
     <div className={`p-4 rounded-lg ${theme === 'dark' ? 'bg-gray-800' : 'bg-white shadow'}`}>
-      {/* Search Bar */}
+     
       <div className="relative mb-6">
         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
           <Search className="h-5 w-5 text-gray-500" />
@@ -69,13 +69,13 @@ const FilterBar = ({
         )}
       </div>
       
-      {/* Filter Labels */}
+      
       <div className="flex items-center mb-3">
         <Filter className="h-5 w-5 mr-2" />
         <h3 className="font-medium">Filters</h3>
       </div>
       
-      {/* Difficulty Filters */}
+     
       <div className="mb-4">
         <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Difficulty:</p>
         <div className="flex flex-wrap gap-2">
@@ -94,7 +94,6 @@ const FilterBar = ({
         </div>
       </div>
       
-      {/* Muscle Group Filters */}
       <div>
         <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Target Area:</p>
         <div className="flex flex-wrap gap-2">

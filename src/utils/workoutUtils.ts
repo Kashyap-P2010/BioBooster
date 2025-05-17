@@ -6,27 +6,27 @@ import {
 import { exercises } from '../data/exercises';
 import { Difficulty, MuscleGroup, Exercise } from '../types/exercise';
 
-// Helper function to generate a unique ID
+
 const generateId = (): string => {
   return Math.random().toString(36).substring(2, 15) + 
          Math.random().toString(36).substring(2, 15);
 };
 
-// Helper function to get exercises based on difficulty and muscle groups
+
 const getFilteredExercises = (preferences: WorkoutPreferences): Exercise[] => {
   let exercisePool: Exercise[] = [];
   
-  // Filter by difficulty
+  
   const { difficulty } = preferences;
   exercisePool = exercises.filter(ex => ex.difficulty === difficulty);
   
-  // If not enough exercises, include lower difficulty levels
+  
   if (exercisePool.length < 5) {
     const difficultyLevels: Difficulty[] = ['beginner', 'intermediate', 'advanced'];
     const currentLevelIndex = difficultyLevels.indexOf(difficulty);
     
     if (currentLevelIndex > 0) {
-      // Add exercises from lower difficulty level
+      
       const lowerLevelExercises = exercises.filter(
         ex => ex.difficulty === difficultyLevels[currentLevelIndex - 1]
       );
@@ -34,14 +34,14 @@ const getFilteredExercises = (preferences: WorkoutPreferences): Exercise[] => {
     }
   }
   
-  // Filter by muscle groups
+  
   if (!preferences.targetMuscleGroups.includes('full-body')) {
     exercisePool = exercisePool.filter(exercise => 
       exercise.muscleGroups.some(group => preferences.targetMuscleGroups.includes(group))
     );
   }
   
-  // If we don't have enough exercises after filtering, add some from other difficulty levels
+  
   if (exercisePool.length < 4) {
     const additionalExercises = exercises.filter(
       ex => !exercisePool.includes(ex) && 
@@ -55,14 +55,14 @@ const getFilteredExercises = (preferences: WorkoutPreferences): Exercise[] => {
   return exercisePool;
 };
 
-// Function to generate a workout
+
 export const generateWorkout = (preferences: WorkoutPreferences): Workout => {
   const { duration, difficulty, ageGroup, targetMuscleGroups } = preferences;
   
-  // Get exercises based on preferences
+  
   const filteredExercises = getFilteredExercises(preferences);
   
-  // Determine exercise count based on duration
+  
   let exerciseCount: number;
   switch (duration) {
     case 5:
@@ -84,11 +84,11 @@ export const generateWorkout = (preferences: WorkoutPreferences): Workout => {
       exerciseCount = 8;
   }
   
-  // Randomly select exercises
+  
   const selectedExercises: Exercise[] = [];
   const exercisePool = [...filteredExercises];
   
-  // Ensure we don't try to pick more exercises than exist in the pool
+  
   exerciseCount = Math.min(exerciseCount, exercisePool.length);
   
   while (selectedExercises.length < exerciseCount && exercisePool.length > 0) {
@@ -97,13 +97,13 @@ export const generateWorkout = (preferences: WorkoutPreferences): Workout => {
     exercisePool.splice(randomIndex, 1);
   }
   
-  // Determine sets and reps based on difficulty and age group
+  
   const workoutExercises: WorkoutExercise[] = selectedExercises.map(exercise => {
     let sets = 3;
     let reps = 10;
     let restTime = 30;
     
-    // Adjust based on difficulty
+    
     if (difficulty === 'beginner') {
       sets = 2;
       reps = 8;
@@ -114,13 +114,13 @@ export const generateWorkout = (preferences: WorkoutPreferences): Workout => {
       restTime = 20;
     }
     
-    // Adjust based on age group
+    
     if (ageGroup === 'senior') {
       sets = Math.max(2, sets - 1);
       reps = Math.max(6, reps - 2);
       restTime += 15;
     } else if (ageGroup === 'teen') {
-      // Teens can generally follow adult programming but with slightly lower intensity
+      
       if (difficulty === 'advanced') {
         sets = 3;
       }
@@ -135,7 +135,7 @@ export const generateWorkout = (preferences: WorkoutPreferences): Workout => {
     };
   });
   
-  // Create workout name and description
+  
   const muscleGroupNames = targetMuscleGroups.map(group => 
     group.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
   ).join('/');

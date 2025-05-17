@@ -36,7 +36,7 @@ const HomePage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
+
       <section className="bg-gradient-to-br from-primary-600 to-primary-500 text-white py-16 md:py-24">
         <div className="container-custom">
           <motion.div 
@@ -81,7 +81,7 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* Features Section */}
+
       <section className="py-16 md:py-24">
         <div className="container-custom">
           <motion.div 
@@ -120,7 +120,7 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* Age Groups Section */}
+
       <section className="py-16 md:py-24 bg-gray-100">
         <div className="container-custom">
           <motion.div 
@@ -265,7 +265,7 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+
       <section className="py-16 md:py-24 bg-accent-500 text-white">
         <div className="container-custom">
           <motion.div 
@@ -303,7 +303,7 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+
       <section className="py-16 md:py-24">
         <div className="container-custom">
           <motion.div 

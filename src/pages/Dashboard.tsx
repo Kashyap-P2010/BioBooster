@@ -7,7 +7,7 @@ import { BarChart, Dumbbell, Award, Calendar, Clock, TrendingUp, Heart } from 'l
 const Dashboard = () => {
   const { theme } = useTheme();
   
-  // Mock data for the dashboard
+  
   const stats = {
     workoutsCompleted: 12,
     streakDays: 5,
@@ -21,7 +21,7 @@ const Dashboard = () => {
     { id: 3, name: 'Lower Body Focus', date: '1 week ago', duration: 45 },
   ];
   
-  // Stats card rendering helper
+  
   const StatCard = ({ icon, title, value, unit }: { icon: React.ReactNode, title: string, value: number, unit: string }) => (
     <Card className="flex items-center p-4 transform transition-transform hover:scale-102">
       <div className={`p-3 rounded-full mr-4 ${theme === 'dark' ? 'bg-blue-900 text-blue-400' : 'bg-blue-100 text-blue-600'}`}>
@@ -44,7 +44,7 @@ const Dashboard = () => {
           </p>
         </div>
         
-        {/* Stats Grid */}
+        {}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8 animate-fade-in">
           <StatCard 
             icon={<Dumbbell className="h-6 w-6" />}
@@ -72,9 +72,9 @@ const Dashboard = () => {
           />
         </div>
         
-        {/* Main Content */}
+        {}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Health Metrics */}
+          {}
           <Card className="p-6">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-xl font-bold">Health Metrics</h2>
@@ -82,7 +82,7 @@ const Dashboard = () => {
             </div>
             
             <div className="space-y-6">
-              {/* Weight tracker */}
+              {}
               <div>
                 <div className="flex justify-between items-center mb-2">
                   <span className="font-medium flex items-center">
@@ -99,7 +99,7 @@ const Dashboard = () => {
                 </div>
               </div>
               
-              {/* BMI */}
+              {}
               <div>
                 <div className="flex justify-between items-center mb-2">
                   <span className="font-medium flex items-center">
@@ -117,7 +117,7 @@ const Dashboard = () => {
                 </div>
               </div>
               
-              {/* Rest day suggestion */}
+              {}
               <div className={`mt-6 p-4 rounded-lg ${theme === 'dark' ? 'bg-blue-900/30' : 'bg-blue-50'}`}>
                 <h3 className="font-medium text-blue-600 dark:text-blue-400">Recovery Recommendation</h3>
                 <p className="text-sm mt-1">Based on your recent activity, today would be a good rest day. Consider gentle stretching or yoga.</p>
@@ -125,7 +125,7 @@ const Dashboard = () => {
             </div>
           </Card>
           
-          {/* Achievement Badges */}
+          {}
           <Card className="p-6">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-xl font-bold">Recent Achievements</h2>
@@ -149,7 +149,7 @@ const Dashboard = () => {
             </p>
           </Card>
           
-          {/* Recent Workouts */}
+          {}
           <Card className="p-6">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-xl font-bold">Recent Workouts</h2>

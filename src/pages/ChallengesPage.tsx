@@ -12,7 +12,7 @@ const ChallengesPage: React.FC = () => {
   const { currentUser } = useAuth();
   const [expandedChallenge, setExpandedChallenge] = useState<string | null>(null);
 
-  // Check if the user has completed the current challenge
+  
   const currentChallenge = getCurrentChallenge();
   const hasCompletedToday = userWorkoutLogs.some(
     log => 
@@ -33,15 +33,15 @@ const ChallengesPage: React.FC = () => {
     return exercise ? exercise.name : 'Unknown Exercise';
   };
 
-  // Sort challenges: current challenge first, then by date (newest to oldest)
+  
   const sortedChallenges = [...dailyChallenges].sort((a, b) => {
-    // Current challenge is always first
+    
     if (currentChallenge) {
       if (a.id === currentChallenge.id) return -1;
       if (b.id === currentChallenge.id) return 1;
     }
     
-    // Otherwise sort by date (newest first)
+    
     return new Date(b.date).getTime() - new Date(a.date).getTime();
   });
 
@@ -55,7 +55,7 @@ const ChallengesPage: React.FC = () => {
           </p>
         </div>
 
-        {/* Current Challenge Highlight */}
+        {}
         {currentChallenge && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -125,7 +125,7 @@ const ChallengesPage: React.FC = () => {
                 </div>
               </div>
               
-              {/* Expandable Workout Preview */}
+              {}
               <div className="bg-white p-4 cursor-pointer" onClick={() => toggleExpandChallenge(currentChallenge.id)}>
                 <div className="flex justify-between items-center">
                   <span className="font-medium text-gray-800">Workout Preview</span>
@@ -160,7 +160,7 @@ const ChallengesPage: React.FC = () => {
           </motion.div>
         )}
 
-        {/* Past Challenges */}
+        {}
         <div className="mb-8">
           <h2 className="text-xl font-bold mb-4 text-gray-800">Past Challenges</h2>
           
@@ -199,7 +199,7 @@ const ChallengesPage: React.FC = () => {
                       </span>
                     </div>
                     
-                    {/* Workout Preview Toggle */}
+                    {}
                     <div 
                       className="flex justify-between items-center cursor-pointer py-2 hover:bg-gray-50 rounded px-2 transition-colors"
                       onClick={() => toggleExpandChallenge(challenge.id)}
