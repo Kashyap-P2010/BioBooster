@@ -72,7 +72,7 @@ export default function ExerciseDetails() {
   };
   
   
-  const placeholderImage = 'https://images.pexels.com/photos/4761769/pexels-photo-4761769.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500';
+  const placeholderImage = exercise.imageUrl;
   
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">

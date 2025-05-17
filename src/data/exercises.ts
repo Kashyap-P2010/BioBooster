@@ -44,7 +44,7 @@ export const exercises: Exercise[] = [
     difficulty: 'intermediate',
     instructions: 'Using a chair or bench, place hands on the edge with fingers facing forward. Lower your body by bending your elbows, then push back up.',
     targetMuscles: ['triceps', 'shoulders', 'chest'],
-    imageUrl: '/src/components/images/triceps-dips.jpeg'
+    imageUrl: '/src/components/images/tricep-dips.jpeg'
   },
   {
     id: 'incline-pushups',

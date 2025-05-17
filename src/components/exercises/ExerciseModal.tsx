@@ -38,7 +38,7 @@ const ExerciseModal = ({ exercise, onClose }: ExerciseModalProps) => {
           <div className="h-64 overflow-hidden">
             {/* TODO: Replace with real images later */}
             <img 
-              src={`https://images.pexels.com/photos/3822906/pexels-photo-3822906.jpeg?auto=compress&cs=tinysrgb&w=1200&h=500&fit=crop`}
+              src={exercise.imageUrl}
               alt={exercise.name}
               className="w-full h-full object-cover"
             />

@@ -22,7 +22,7 @@ export default function ExerciseCard({ exercise }: ExerciseCardProps) {
   };
   
   
-  const placeholderImage = 'https://images.pexels.com/photos/4761769/pexels-photo-4761769.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500';
+  const placeholderImage = exercise.imageUrl;
   
   return (
     <motion.div
