@@ -17,7 +17,7 @@ export const exercises: Exercise[] = [
     difficulty: 'advanced',
     instructions: 'Form a diamond shape with your hands under your chest. Keep your elbows close to your body as you lower and push up.',
     targetMuscles: ['triceps', 'chest', 'shoulders'],
-    imageUrl: '/src/components/images/diamond-pushups.jpg'
+    imageUrl: '/src/components/images/diamond-pushups.webp'
   },
   {
     id: 'wide-pushups',
@@ -26,7 +26,7 @@ export const exercises: Exercise[] = [
     difficulty: 'intermediate',
     instructions: 'Place your hands wider than shoulder-width apart. Lower your body and push back up, focusing on chest engagement.',
     targetMuscles: ['chest', 'shoulders'],
-    imageUrl: '/src/components/images/wide-pushups.jpg'
+    imageUrl: '/src/components/images/wide-pushups.webp'
   },
   {
     id: 'pike-pushups',
@@ -35,7 +35,7 @@ export const exercises: Exercise[] = [
     difficulty: 'intermediate',
     instructions: 'Form an inverted V with your body, hands and feet on the ground. Lower your head toward the ground and push back up.',
     targetMuscles: ['shoulders', 'triceps'],
-    imageUrl: '/src/components/images/pike-pushups.jpg'
+    imageUrl: '/src/components/images/pike-pushups.webp'
   },
   {
     id: 'triceps-dips',
@@ -44,7 +44,7 @@ export const exercises: Exercise[] = [
     difficulty: 'intermediate',
     instructions: 'Using a chair or bench, place hands on the edge with fingers facing forward. Lower your body by bending your elbows, then push back up.',
     targetMuscles: ['triceps', 'shoulders', 'chest'],
-    imageUrl: '/src/components/images/triceps-dips.jpg'
+    imageUrl: '/src/components/images/triceps-dips.jpeg'
   },
   {
     id: 'incline-pushups',
@@ -53,7 +53,7 @@ export const exercises: Exercise[] = [
     difficulty: 'beginner',
     instructions: 'Place hands on an elevated surface like a bench or step. Perform a push-up while keeping your body straight.',
     targetMuscles: ['chest', 'shoulders', 'triceps'],
-    imageUrl: '/src/components/images/incline-pushups.jpg'
+    imageUrl: '/src/components/images/incline-pushups.jpeg'
   },
   {
     id: 'handstand-pushups',
@@ -62,7 +62,7 @@ export const exercises: Exercise[] = [
     difficulty: 'advanced',
     instructions: 'Get into a handstand position against a wall. Lower your head toward the ground and push back up.',
     targetMuscles: ['shoulders', 'triceps', 'upper back'],
-    imageUrl: '/src/components/images/handstand-pushups.jpg'
+    imageUrl: '/src/components/images/handstand-pushups.jpeg'
   },
   {
     id: 'arm-circles',
@@ -71,7 +71,7 @@ export const exercises: Exercise[] = [
     difficulty: 'beginner',
     instructions: 'Extend arms straight out to sides at shoulder height. Make small circular motions, gradually increasing circle size.',
     targetMuscles: ['shoulders', 'upper back'],
-    imageUrl: '/src/components/images/arm-circles.jpg'
+    imageUrl: '/src/components/images/arm-circles.png'
   },
   {
     id: 'plank-shoulder-taps',
@@ -89,7 +89,7 @@ export const exercises: Exercise[] = [
     difficulty: 'intermediate',
     instructions: 'Similar to regular push-ups but with elbows kept tight against body and hands positioned under shoulders, focusing on bicep engagement.',
     targetMuscles: ['biceps', 'chest', 'triceps'],
-    imageUrl: '/src/components/images/bicep-pushups.jpg'
+    imageUrl: '/src/components/images/bicep-pushups.jpeg'
   },
   
   {
@@ -99,7 +99,7 @@ export const exercises: Exercise[] = [
     difficulty: 'beginner',
     instructions: 'Hold a forearm or high plank position with your body in a straight line from head to heels. Engage your core and hold the position.',
     targetMuscles: ['core', 'shoulders', 'back'],
-    imageUrl: '/src/components/images/planks.jpg'
+    imageUrl: '/src/components/images/plank.png'
   },
   {
     id: 'side-plank',
@@ -108,7 +108,7 @@ export const exercises: Exercise[] = [
     difficulty: 'intermediate',
     instructions: 'Lie on your side with legs stacked. Prop yourself up on your elbow or hand, forming a straight line from head to feet. Hold this position.',
     targetMuscles: ['obliques', 'core', 'shoulders'],
-    imageUrl: '/src/components/images/side-plank.jpg'
+    imageUrl: '/src/components/images/side-plank.jpeg'
   },
   {
     id: 'russian-twists',
@@ -117,7 +117,7 @@ export const exercises: Exercise[] = [
     difficulty: 'intermediate',
     instructions: 'Sit on the floor with knees bent. Lean back slightly, keeping back straight. Twist torso from side to side, touching the floor beside you.',
     targetMuscles: ['obliques', 'core'],
-    imageUrl: '/src/components/images/russian-twists.jpg'
+    imageUrl: '/src/components/images/russian-twists.webp'
   },
   {
     id: 'bicycle-crunches',
@@ -126,7 +126,7 @@ export const exercises: Exercise[] = [
     difficulty: 'intermediate',
     instructions: 'Lie on your back with hands behind head. Bring opposite elbow to opposite knee, alternating sides with a pedaling motion.',
     targetMuscles: ['abs', 'obliques'],
-    imageUrl: '/src/components/images/bicycle-crunches.jpg'
+    imageUrl: '/src/components/images/bicycle-crunches.webp'
   },
   {
     id: 'leg-raises',
@@ -135,7 +135,7 @@ export const exercises: Exercise[] = [
     difficulty: 'intermediate',
     instructions: 'Lie flat on your back with legs extended. Keeping legs straight, lift them up to a 90-degree angle, then lower them without touching the ground.',
     targetMuscles: ['lower abs', 'hip flexors'],
-    imageUrl: '/src/components/images/leg-raises.jpg'
+    imageUrl: '/src/components/images/leg-raises.webp'
   },
   {
     id: 'mountain-climbers',
@@ -144,7 +144,7 @@ export const exercises: Exercise[] = [
     difficulty: 'intermediate',
     instructions: 'Start in a high plank position. Alternate bringing each knee toward your chest in a running motion while maintaining a stable upper body.',
     targetMuscles: ['core', 'shoulders', 'hip flexors'],
-    imageUrl: '/src/components/images/mountain-climbers.jpg'
+    imageUrl: '/src/components/images/mountain-climbers.png'
   },
   {
     id: 'flutter-kicks',
@@ -153,7 +153,7 @@ export const exercises: Exercise[] = [
     difficulty: 'intermediate',
     instructions: 'Lie on your back with legs extended and slightly lifted. Kick legs up and down in a fluttering motion without touching the ground.',
     targetMuscles: ['lower abs', 'hip flexors'],
-    imageUrl: '/src/components/images/flutter-kicks.jpg'
+    imageUrl: '/src/components/images/flutter-kicks.webp'
   },
   {
     id: 'v-ups',
@@ -162,7 +162,7 @@ export const exercises: Exercise[] = [
     difficulty: 'advanced',
     instructions: 'Lie on your back with arms extended overhead and legs straight. Simultaneously lift upper body and legs, forming a V-shape, reaching hands toward toes.',
     targetMuscles: ['abs', 'hip flexors'],
-    imageUrl: '/src/components/images/v-ups.jpg'
+    imageUrl: '/src/components/images/vups.jpeg'
   },
   {
     id: 'toe-touches',
@@ -180,7 +180,7 @@ export const exercises: Exercise[] = [
     difficulty: 'beginner',
     instructions: 'Lie face down with arms extended overhead. Simultaneously lift arms, chest, and legs off the ground, hold, and lower.',
     targetMuscles: ['lower back', 'glutes', 'shoulders'],
-    imageUrl: '/src/components/images/superman-holds.jpg'
+    imageUrl: '/src/components/images/superman-holds.jpeg'
   },
   
   {
@@ -190,7 +190,7 @@ export const exercises: Exercise[] = [
     difficulty: 'beginner',
     instructions: 'Stand with feet shoulder-width apart. Lower your body by bending knees and pushing hips back, as if sitting in a chair. Return to standing.',
     targetMuscles: ['quadriceps', 'glutes', 'hamstrings'],
-    imageUrl: '/src/components/images/squats.jpg'
+    imageUrl: '/src/components/images/squats.jpeg'
   },
   {
     id: 'lunges',
@@ -199,7 +199,7 @@ export const exercises: Exercise[] = [
     difficulty: 'intermediate',
     instructions: 'Step forward with one leg and lower your body until both knees are bent at 90-degree angles. Push back to starting position and alternate legs.',
     targetMuscles: ['quadriceps', 'glutes', 'hamstrings'],
-    imageUrl: '/src/components/images/lunges.jpg'
+    imageUrl: '/src/components/images/lunges.jpeg'
   },
   {
     id: 'bulgarian-split-squats',
@@ -208,7 +208,7 @@ export const exercises: Exercise[] = [
     difficulty: 'advanced',
     instructions: 'Place one foot on a bench behind you. Lower your body until your front thigh is parallel to the ground, then push back up.',
     targetMuscles: ['quadriceps', 'glutes', 'hamstrings'],
-    imageUrl: '/src/components/images/bulgarian-split-squats.jpg'
+    imageUrl: '/src/components/images/bulgarian-split-squats.jpeg'
   },
   {
     id: 'step-ups',
@@ -217,7 +217,8 @@ export const exercises: Exercise[] = [
     difficulty: 'intermediate',
     instructions: 'Stand in front of a bench or step. Step up with one foot, bringing the other foot up, then step back down. Alternate legs.',
     targetMuscles: ['quadriceps', 'glutes', 'calves'],
-    imageUrl: '/src/components/images/step-ups.jpg'
+    imageUrl: '/src/components/images/step-ups.jpeg'
+    // THIS IS THE LAST THING I DID! GOTTA DO THE REST!
   },
   {
     id: 'glute-bridges',
