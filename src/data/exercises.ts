@@ -227,7 +227,7 @@ export const exercises: Exercise[] = [
     difficulty: 'beginner',
     instructions: 'Lie on your back with knees bent and feet flat on the floor. Lift hips toward ceiling by squeezing glutes, then lower back down.',
     targetMuscles: ['glutes', 'hamstrings', 'lower back'],
-    imageUrl: '/src/components/images/glute-bridges.jpg'
+    imageUrl: '/src/components/images/glute-bridges.jpeg'
   },
   {
     id: 'single-leg-glute-bridges',
@@ -236,7 +236,7 @@ export const exercises: Exercise[] = [
     difficulty: 'intermediate',
     instructions: 'Similar to regular glute bridges, but with one leg extended straight. Lift hips by pushing through the planted foot.',
     targetMuscles: ['glutes', 'hamstrings', 'core'],
-    imageUrl: '/src/components/images/single-leg-glute-bridges.jpg'
+    imageUrl: '/src/components/images/single-leg-glute-bridge.png'
   },
   {
     id: 'curtsy-lunges',
@@ -245,7 +245,7 @@ export const exercises: Exercise[] = [
     difficulty: 'intermediate',
     instructions: 'Step one foot behind and across your body, bending both knees as if curtseying. Return to standing and alternate sides.',
     targetMuscles: ['glutes', 'quadriceps', 'inner thighs'],
-    imageUrl: '/src/components/images/curtsy-lunges.jpg'
+    imageUrl: '/src/components/images/curtsy-lunges.jpeg'
   },
   {
     id: 'sumo-squats',
@@ -254,7 +254,7 @@ export const exercises: Exercise[] = [
     difficulty: 'intermediate',
     instructions: 'Stand with feet wider than shoulder-width and toes pointed outward. Lower into a squat position, keeping chest up and knees tracking over toes.',
     targetMuscles: ['inner thighs', 'glutes', 'quadriceps'],
-    imageUrl: '/src/components/images/sumo-squats.jpg'
+    imageUrl: '/src/components/images/sumo-squats.jpeg'
   },
   {
     id: 'jump-squats',
@@ -263,7 +263,7 @@ export const exercises: Exercise[] = [
     difficulty: 'intermediate',
     instructions: 'Perform a squat, then explosively jump upward. Land softly and immediately lower into the next squat.',
     targetMuscles: ['quadriceps', 'glutes', 'calves'],
-    imageUrl: '/src/components/images/jump-squats.jpg'
+    imageUrl: '/src/components/images/jump-squats.png'
   },
   {
     id: 'wall-sit',
@@ -272,7 +272,7 @@ export const exercises: Exercise[] = [
     difficulty: 'beginner',
     instructions: 'Lean against a wall with feet shoulder-width apart. Slide down until thighs are parallel to the ground, forming a 90-degree angle. Hold this position.',
     targetMuscles: ['quadriceps', 'glutes', 'calves'],
-    imageUrl: '/src/components/images/wall-sit.jpg'
+    imageUrl: '/src/components/images/wall-sit.jpeg'
   },
   
   {
@@ -282,7 +282,7 @@ export const exercises: Exercise[] = [
     difficulty: 'advanced',
     instructions: 'Begin standing, then squat down, kick feet back into a plank, perform a push-up, jump feet forward, and explosively jump up with arms overhead.',
     targetMuscles: ['full body'],
-    imageUrl: '/src/components/images/burpees.jpg'
+    imageUrl: '/src/components/images/burpees.png'
   },
   {
     id: 'jumping-jacks',
@@ -291,7 +291,7 @@ export const exercises: Exercise[] = [
     difficulty: 'beginner',
     instructions: 'Start standing with arms at sides. Jump feet out wide while raising arms overhead, then jump back to starting position.',
     targetMuscles: ['shoulders', 'calves', 'hip abductors'],
-    imageUrl: '/src/components/images/jumping-jacks.jpg'
+    imageUrl: '/src/components/images/jumping-jacks.jpeg'
   },
   {
     id: 'high-knees',
@@ -300,7 +300,7 @@ export const exercises: Exercise[] = [
     difficulty: 'intermediate',
     instructions: 'Run in place, lifting knees as high as possible toward chest. Maintain a quick pace while pumping arms.',
     targetMuscles: ['hip flexors', 'quads', 'calves', 'core'],
-    imageUrl: '/src/components/images/high-knees.jpg'
+    imageUrl: '/src/components/images/high-knees.jpeg'
   },
   {
     id: 'butt-kicks',
@@ -309,7 +309,7 @@ export const exercises: Exercise[] = [
     difficulty: 'beginner',
     instructions: 'Run in place, kicking heels up toward buttocks with each step. Maintain a quick pace while keeping upper body stable.',
     targetMuscles: ['hamstrings', 'glutes', 'calves'],
-    imageUrl: '/src/components/images/butt-kicks.jpg'
+    imageUrl: '/src/components/images/butt-kicks.png'
   },
   {
     id: 'mountain-climbers-cardio',
@@ -318,7 +318,7 @@ export const exercises: Exercise[] = [
     difficulty: 'intermediate',
     instructions: 'Start in a high plank position. Alternate bringing each knee toward your chest in a running motion while maintaining a stable upper body.',
     targetMuscles: ['core', 'shoulders', 'hip flexors', 'quads'],
-    imageUrl: '/src/components/images/mountain-climbers-cardio.jpg'
+    imageUrl: '/src/components/images/mountain-climbers-cardio.png'
   },
   {
     id: 'skater-jumps',
@@ -327,7 +327,7 @@ export const exercises: Exercise[] = [
     difficulty: 'intermediate',
     instructions: 'Jump laterally from one foot to the other, mimicking a speed skater. Land softly on the outside foot and swing arms across body.',
     targetMuscles: ['glutes', 'quads', 'calves', 'core'],
-    imageUrl: '/src/components/images/skater-jumps.jpg'
+    imageUrl: '/src/components/images/skater-jumps.png'
   },
   {
     id: 'plank-jacks',
@@ -336,7 +336,7 @@ export const exercises: Exercise[] = [
     difficulty: 'intermediate',
     instructions: 'Start in a high plank position. Jump feet out wide and then back together, similar to a jumping jack motion.',
     targetMuscles: ['core', 'shoulders', 'chest', 'legs'],
-    imageUrl: '/src/components/images/plank-jacks.jpg'
+    imageUrl: '/src/components/images/plank-jacks.jpeg'
   },
   {
     id: 'broad-jumps',
@@ -345,7 +345,7 @@ export const exercises: Exercise[] = [
     difficulty: 'intermediate',
     instructions: 'Stand with feet hip-width apart. Swing arms back, then forward as you jump horizontally as far as possible. Land softly and repeat.',
     targetMuscles: ['glutes', 'quads', 'calves', 'core'],
-    imageUrl: '/src/components/images/broad-jumps.jpg'
+    imageUrl: '/src/components/images/broad-jumps.jpeg'
   },
   {
     id: 'bear-crawls',
@@ -354,7 +354,7 @@ export const exercises: Exercise[] = [
     difficulty: 'intermediate',
     instructions: 'Start on hands and knees with knees hovering just above the ground. Move forward by simultaneously moving opposite hand and foot.',
     targetMuscles: ['shoulders', 'core', 'quadriceps', 'triceps'],
-    imageUrl: '/src/components/images/bear-crawls.jpg'
+    imageUrl: '/src/components/images/bear-crawls.jpeg'
   },
   {
     id: 'crab-walks',
@@ -363,7 +363,7 @@ export const exercises: Exercise[] = [
     difficulty: 'beginner',
     instructions: 'Sit on the floor, place hands behind you with fingers pointing toward feet. Lift hips and walk backward using hands and feet.',
     targetMuscles: ['triceps', 'shoulders', 'core', 'glutes'],
-    imageUrl: '/src/components/images/crab-walks.jpg'
+    imageUrl: '/src/components/images/crab-walks.jpeg'
   },
   
   {
@@ -373,7 +373,7 @@ export const exercises: Exercise[] = [
     difficulty: 'beginner',
     instructions: 'Start on hands and knees. Alternate between arching back upward (cat) and letting it sag while lifting head (cow).',
     targetMuscles: ['spine', 'neck', 'core'],
-    imageUrl: '/src/components/images/cat-cow.jpg'
+    imageUrl: '/src/components/images/cat-cow.jpeg'
   },
   {
     id: 'downdog-cobra',
@@ -382,7 +382,7 @@ export const exercises: Exercise[] = [
     difficulty: 'beginner',
     instructions: 'Flow between downward dog position (inverted V) and cobra pose (lying face down, lifting chest with arms).',
     targetMuscles: ['shoulders', 'hamstrings', 'chest', 'spine'],
-    imageUrl: '/src/components/images/downdog-cobra.jpg'
+    imageUrl: '/src/components/images/downdog-cobra.jpeg'
   },
   {
     id: 'hip-circles',
@@ -391,7 +391,7 @@ export const exercises: Exercise[] = [
     difficulty: 'beginner',
     instructions: 'Stand with feet hip-width apart. Place hands on hips and make circular motions with hips in both directions.',
     targetMuscles: ['hip flexors', 'lower back'],
-    imageUrl: '/src/components/images/hip-circles.jpg'
+    imageUrl: '/src/components/images/hip-circles.png'
   },
   {
     id: 'lunge-twist',
@@ -400,7 +400,7 @@ export const exercises: Exercise[] = [
     difficulty: 'beginner',
     instructions: 'Step into a lunge position. Rotate your torso toward the front leg side, then switch sides.',
     targetMuscles: ['hip flexors', 'obliques', 'quadriceps'],
-    imageUrl: '/src/components/images/lunge-twist.jpg'
+    imageUrl: '/src/components/images/lunge-twist.png'
   },
   {
     id: 'standing-toe-touches',
@@ -409,7 +409,7 @@ export const exercises: Exercise[] = [
     difficulty: 'beginner',
     instructions: 'Stand with feet hip-width apart. Bend at the waist and reach for your toes, keeping legs straight or slightly bent.',
     targetMuscles: ['hamstrings', 'lower back'],
-    imageUrl: '/src/components/images/standing-toe-touches.jpg'
+    imageUrl: '/src/components/images/standing-toe-touches.jpeg'
   },
   {
     id: 'seated-forward-fold',
@@ -418,7 +418,7 @@ export const exercises: Exercise[] = [
     difficulty: 'beginner',
     instructions: 'Sit with legs extended straight in front. Hinge at hips and reach for toes, keeping back straight.',
     targetMuscles: ['hamstrings', 'lower back'],
-    imageUrl: '/src/components/images/seated-forward-fold.jpg'
+    imageUrl: '/src/components/images/seated-forward-fold.jpeg'
   },
   {
     id: 'childs-pose',
@@ -427,7 +427,7 @@ export const exercises: Exercise[] = [
     difficulty: 'beginner',
     instructions: 'Kneel on the floor, then sit back on heels. Extend arms forward and lower torso to the ground, resting forehead on mat.',
     targetMuscles: ['lower back', 'shoulders', 'hips'],
-    imageUrl: '/src/components/images/childs-pose.jpg'
+    imageUrl: '/src/components/images/childs-pose.jpeg'
   },
   {
     id: 'thread-the-needle',
@@ -436,7 +436,7 @@ export const exercises: Exercise[] = [
     difficulty: 'beginner',
     instructions: 'Start on hands and knees. Thread one arm under and across body, reaching toward opposite side. Rotate chest toward the ground.',
     targetMuscles: ['shoulders', 'upper back', 'spine'],
-    imageUrl: '/src/components/images/thread-the-needle.jpg'
+    imageUrl: '/src/components/images/thread-the-needle.jpeg'
   },
   {
     id: 'leg-swings',
@@ -445,7 +445,7 @@ export const exercises: Exercise[] = [
     difficulty: 'beginner',
     instructions: 'Hold onto a wall or support. Swing one leg forward and backward in a controlled motion. Switch sides.',
     targetMuscles: ['hip flexors', 'hamstrings'],
-    imageUrl: '/src/components/images/leg-swings.jpg'
+    imageUrl: '/src/components/images/leg-swings.png'
   },
   {
     id: 'ankle-bounces',
@@ -454,7 +454,7 @@ export const exercises: Exercise[] = [
     difficulty: 'beginner',
     instructions: 'Stand with feet hip-width apart. Rise onto balls of feet and bounce gently up and down to activate calves.',
     targetMuscles: ['calves', 'ankles'],
-    imageUrl: '/src/components/images/ankle-bounces.jpg'
+    imageUrl: '/src/components/images/ankle-bounces.jpeg'
   }
 ];
 
