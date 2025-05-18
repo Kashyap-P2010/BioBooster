@@ -19,16 +19,16 @@ export default function Footer() {
               Your personal fitness companion for customized workouts, progress tracking, and achieving your fitness goals.
             </p>
             <div className="flex space-x-4 pt-2">
-              <a href="#" className="text-gray-500 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+              <a href="https://www.instagram.com/zeshenofficial/" className="text-gray-500 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="text-gray-500 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+              <a href="https://www.instagram.com/zeshenofficial/" className="text-gray-500 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                 <Twitter size={20} />
               </a>
-              <a href="#" className="text-gray-500 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+              <a href="https://www.instagram.com/zeshenofficial/" className="text-gray-500 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="text-gray-500 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+              <a href="https://github.com/Kashyap-P2010/BioBooster" className="text-gray-500 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                 <Github size={20} />
               </a>
             </div>
