@@ -36,7 +36,6 @@ const ExerciseModal = ({ exercise, onClose }: ExerciseModalProps) => {
           </button>
           
           <div className="h-64 overflow-hidden">
-            {/* TODO: Replace with real images later */}
             <img 
               src={exercise.imageUrl}
               alt={exercise.name}

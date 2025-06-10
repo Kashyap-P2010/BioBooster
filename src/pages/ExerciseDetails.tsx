@@ -3,7 +3,7 @@ import { ArrowLeft, Award, Dumbbell, ListChecks } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import Button from '../components/ui/Button';
-import { getExerciseById } from '../data/exercises';
+import { exercises, getExerciseById } from '../data/exercises';
 import { Exercise } from '../types';
 
 export default function ExerciseDetails() {
@@ -11,7 +11,7 @@ export default function ExerciseDetails() {
   const [exercise, setExercise] = useState<Exercise | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
-  
+
   useEffect(() => {
     if (id) {
       const foundExercise = getExerciseById(id);
@@ -19,7 +19,6 @@ export default function ExerciseDetails() {
       setIsLoading(false);
     }
   }, [id]);
-  
 
   if (!isLoading && !exercise) {
     return (
@@ -27,14 +26,12 @@ export default function ExerciseDetails() {
         <h2 className="text-2xl font-bold mb-4">Exercise Not Found</h2>
         <p className="mb-6">Sorry, we couldn't find the exercise you're looking for.</p>
         <Link to="/exercises">
-          <Button variant="primary">
-            Return to Exercise Library
-          </Button>
+          <Button variant="primary">Return to Exercise Library</Button>
         </Link>
       </div>
     );
   }
-  
+
   if (isLoading || !exercise) {
     return (
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 flex justify-center">
@@ -46,17 +43,17 @@ export default function ExerciseDetails() {
       </div>
     );
   }
-  
 
   const formatDifficulty = (difficulty: Exercise['difficulty']) => {
     return difficulty.charAt(0).toUpperCase() + difficulty.slice(1);
   };
-  
 
   const formatCategory = (category: Exercise['category']) => {
-    return category.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    return category
+      .split('-')
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
   };
-  
 
   const getDifficultyColor = (difficulty: Exercise['difficulty']) => {
     switch (difficulty) {
@@ -70,13 +67,9 @@ export default function ExerciseDetails() {
         return 'text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-800';
     }
   };
-  
-  
-  const placeholderImage = exercise.imageUrl;
-  
+
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      
       <button
         onClick={() => navigate(-1)}
         className="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 mb-6 transition-colors"
@@ -84,9 +77,8 @@ export default function ExerciseDetails() {
         <ArrowLeft className="mr-2 h-4 w-4" />
         Back to exercises
       </button>
-      
+
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-       
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -94,30 +86,33 @@ export default function ExerciseDetails() {
         >
           <div className="relative rounded-xl overflow-hidden shadow-md bg-gray-200 dark:bg-gray-700 h-[400px]">
             <img
-              src={placeholderImage}
+              src="/images/jsdoit.jpg"
               alt={exercise.name}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
             />
           </div>
         </motion.div>
-        
-   
+
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <h1 className="text-3xl font-bold mb-3">{exercise.name}</h1>
-          
+
           <div className="flex flex-wrap gap-2 mb-6">
-            <span className={`px-3 py-1 rounded-full text-sm font-medium ${getDifficultyColor(exercise.difficulty)}`}>
+            <span
+              className={`px-3 py-1 rounded-full text-sm font-medium ${getDifficultyColor(
+                exercise.difficulty
+              )}`}
+            >
               {formatDifficulty(exercise.difficulty)}
             </span>
             <span className="px-3 py-1 rounded-full text-sm font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400">
               {formatCategory(exercise.category)}
             </span>
           </div>
-          
+
           <div className="mb-6">
             <h2 className="text-xl font-semibold mb-3 flex items-center">
               <ListChecks className="mr-2 h-5 w-5 text-primary-600 dark:text-primary-400" />
@@ -127,7 +122,7 @@ export default function ExerciseDetails() {
               {exercise.instructions}
             </p>
           </div>
-          
+
           <div className="mb-6">
             <h2 className="text-xl font-semibold mb-3 flex items-center">
               <Dumbbell className="mr-2 h-5 w-5 text-primary-600 dark:text-primary-400" />
@@ -144,7 +139,7 @@ export default function ExerciseDetails() {
               ))}
             </div>
           </div>
-          
+
           <div className="mb-8">
             <h2 className="text-xl font-semibold mb-3 flex items-center">
               <Award className="mr-2 h-5 w-5 text-primary-600 dark:text-primary-400" />
@@ -154,27 +149,23 @@ export default function ExerciseDetails() {
               <li>Strengthens {exercise.targetMuscles.join(', ')}</li>
               <li>Improves overall {exercise.category === 'mobility' ? 'flexibility' : 'strength'}</li>
               <li>Can be performed anywhere with no equipment</li>
-              {exercise.category === 'full-body' && <li>Elevates heart rate for cardiovascular benefits</li>}
+              {exercise.category === 'full-body' && (
+                <li>Elevates heart rate for cardiovascular benefits</li>
+              )}
               {exercise.difficulty === 'beginner' && <li>Perfect for beginners to build proper form</li>}
             </ul>
           </div>
-          
+
           <div className="flex gap-4">
             <Link to="/workout/create">
-              <Button variant="primary">
-                Add to Workout
-              </Button>
+              <Button variant="primary">Add to Workout</Button>
             </Link>
             <Link to="/exercises">
-              <Button variant="outline">
-                Browse More Exercises
-              </Button>
+              <Button variant="outline">Browse More Exercises</Button>
             </Link>
           </div>
         </motion.div>
       </div>
-      
-    
     </div>
   );
 }
